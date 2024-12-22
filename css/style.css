@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --background_color: #fdfcf5;
+    --main_color: #0e0e0e;
+    --accent_color: #bb2649;
+    --container-width: 1600px;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+*::selection {
+    background: var(--main_color);
+    color: var(--background_color);
+    opacity: .8;
+    line-height: 1;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background_color);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: auto;
+    padding: 70px 70px;
+}
+
+/* Nav bar */
+header {
+    position: fixed;
+    z-index: 1;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: var(--background_color);
+    width: 100vw;
+    padding-left: 40px;
+}
+
+header nav {
+    width: var(--container-width);
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding-left: 5px;
+}
+
+header ul {
+    display: inline-flex;
+    list-style: none;
+    column-gap: 100px;
+    text-wrap: wrap;
+}
+
+header ul a {
+    text-decoration: none;
+    color: var(--main_color);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 30px;
+    padding: 0px 10px;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    position: fixed;
+    top: 100px; /* below the header */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 100px); /* fills the rest of the viewport */
+    z-index: 0;
+    overflow: hidden;
+    background-color: var(--background_color);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center; /* center the image */
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.slide.active {
+    opacity: 0.3;
+}
+
+/* Overlay Content (name and details) */
+.overlay-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Center the name text */
+.name-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.name-bold {
+    font-size: 80px;
+    z-index: 10;
+    font-weight: 600;
+    color: var(--main_color);
+    pointer-events: auto;
+    text-align: center;
+    opacity: 1; /* ensures it starts visible */
+    transition: opacity 0.3s ease; /* adds a smooth fade for opacity changes */
+}
+
+.titles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 400;
+    opacity: 1; /* ensures it starts visible */
+    transition: opacity 0.3s ease; /* adds a smooth fade for opacity changes */
+}
+
+/* Details container at bottom right */
+.details-container {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    pointer-events: auto;
+    z-index: 10000;
+}
+
+.image-description {
+    background-color: rgba(255,255,255,0.85);
+    color: var(--main_color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 30px;
+    max-width: 500px;
+    text-align: left;
+    margin-bottom: 10px;
+    pointer-events: none; /* No interaction when hidden */
+
+    /* Start off-screen below and invisible */
+    transform: translateY(100%);
+    opacity: 0;
+
+    /* Smooth transition for both transform and opacity */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.details-button {
+    color: var(--main_color);
+    font-size: 40px;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    pointer-events: auto;
+    padding: 5px 0;
+}
+
+/* Line animation from center */
+.details-button::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    height: 3px;
+    width: 0%;
+    background-color: var(--main_color);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.details-button:hover {
+    background-color: rgba(255,255,255,0.8);
+    left: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.details-button:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* When hovering over details button, show overlay and text (handled by JS class on body) */
+body.hovering-details .slide.active {
+    opacity: 1;
+}
+
+body.hovering-details .name-bold {
+    opacity: 0; /* fade out */
+}
+
+body.hovering-details .titles {
+    opacity: 0; /* fade out */
+}
+
+body.hovering-details .image-description {
+    /* Slide into view by resetting transform */
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto; /* Allow interaction now that it's visible */
+}
+
+/* Navigation underline animation */
+.pageNav ul li a {
+    position: relative;
+}
+
+.pageNav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    height: 3px;
+    width: 0%;
+    background-color: #000000;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.pageNav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+/* Main Container */
+.text-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px; /* Increased gap between About Me and Skills sections */
+    margin: auto;
+}
+
+.each-section {
+    flex: 1; /* Allow sections to grow and share available space equally */
+    padding: 0px 80px 0px 0px;
+}
+
+.skills-categories {
+    display: flex;
+    flex-wrap: wrap; /* Ensure categories wrap on smaller screens */
+    justify-content: space-evenly;
+    gap: 10px; /* Space between categories */
+}
+
+.category {
+    flex: 1;
+}
+
+.category-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--main_color); /* Darker color for emphasis */
+}
+
+.skills-list {
+    list-style-type: disc; /* Dots for each item */
+    font-size: 20px; /* Font size for items */
+    line-height: 1; /* Space between list items */
+    color: var(--main_color); /* Text color */
+}
+
+.skills-list li {
+    margin-bottom: 8px; /* Space between list items */
+}
+
+/* Spacer */
+.spacer {
+    height: 50px; /* Add spacing at the top */
+}
+
+/* Section Title */
+.section-title {
+    font-size: 40px;
+    padding: 0 0 30px;
+}
+
+.message {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.message p {
+    font-size: 20px;
+    padding-bottom: 40px;
+    max-width: max-content;
+}
+
+.message p a.link.hoverAnimation {
+    color: var(--accent_color);
+    text-decoration: none;
+    font-weight: 400;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.message p a.link.hoverAnimation::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    height: 2px;
+    width: 0;
+    background-color: var(--accent_color);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.message p a.link.hoverAnimation:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Works</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../images/icon.png">
+</head>
+
+<body>
+    <header class="sidebar">
+        <nav class="pageNav">
+            <ul>
+                <li><a class="hoverAnimation" href="../index.html">Home</a></li>
+                <li><a class="hoverAnimation" href="../about.html">About</a></li>
+                <li><a class="hoverAnimation" href="../projects.html">Projects</a></li>
+                <li><a class="hoverAnimation" href="https://drive.google.com/file/d/17D1abitFXCb6fQ29LJHGdNeoCYeOxHlr/view?usp=sharing">Resume</a></li>
+            </ul>    
+        </nav>
+    </header>
+    
+    <main>
+        <div class="spacer"></div>
+        <div class="image-box">
+            <img src="../images/taxi-title.png" alt="Project Image">
+        </div>
+        <div class="content">
+            <div class="spacer"></div>
+            <div class="section">
+                <div class="text">
+                    <p class="header">CityLab Metrics: NYC Taxi Trip Visualization</p>
+                    <span class="info">
+                        <p><b>Course:</b> Creative Coding</p>
+                        <p><b>Professor: </b><a target="_blank" href="https://www.linkedin.com/in/jonoschwartz/" class="link hoverAnimation">Jonathan O. Schwartz</a></p>
+                        <p><b>Group Member:</b> Enzo Mignano</p>
+                        <p><b>Responsibilities:</b> Data Compression, Frontend Development</p>
+                        <p><b>Tools:</b> VS Code, HTML/CSS, JavaScript, D3.js, NYC Open Data</p>
+                        <br>
+                        <p><a target="_blank" href="https://github.com/jonschwartzuofm/UT_402_Creative_Coding" class="link hoverAnimation"><b>Code-></b></a></p>     
+                </div>
+                <div class="text-breaker"></div>
+                <div class="text">
+                    <p>In a megalopolis of 19 million people, how people move around is chaotic but vitally charming. The understanding of the logistics of the system brings new opportunities to improve the existing infrasturcture with time. </p>
+                </div>
+            </div>
+
+            <div>
+                <video autoplay loop style="margin: 20px; place-self: center;">
+                    <source src="../works/imgs/NYC Taxi/datavizdemo.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="section">
+                <div class="text-breaker"></div>
+                <br>
+                <p class="header">Step 1: Creating the HMW Question</p>
+                <br>
+                <div style="display: flex; flex-direction: row;">
+                    <div class="text">
+                        <p>At the very start of the project, we studied a few example databases and tried to generate HMW questions based on our observation and findings of the data. After these observations, we chose an area of focus as a help to guide our approach. Our group eventually decided that mobility is our focus.</p>
+                        <p><b>Final HMW question:</b> How might we be able to visualize how New Yorkers move around NYC?</p>
+                        <p>Based on this question, we developed further research questions upon the context of our project:</p>
+                        <ol>
+                            <li><p>How do people move around NYC?</li>
+                            <li><p>What are the hotspots and patterns of the flow of traffic?</li>
+                        </ol>
+                        <p>Our goal was to create a tool that is easy to use and informative about the urban space to the users. </p>
+                    </div>
+                    <div class="image-small">
+                        <img src="../works/imgs/NYC Taxi/HMW_Urban_Tech_and_Mobility.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <p class="header">Step 2: Creating The Database</p>
+                <br>
+                <div class="text">
+                    <p>The data sets chosen were NYC Yellow Taxi Trips 2018 and NYC District Zones. Both datasets were pulled from NYC Open Data. JavaScript and d3.js was used to merge the databases together. Below are the steps on how the files were merged to create the final database where our visualization pulls from:</p>
+                </div>
+                <div class="grid" style="margin-top: 100px;">
+                    <div class="pic-grid">
+                        <div class="image-grid">
+                            <img class='', src="../works/imgs/NYC Taxi/Slide 16_9 - 1.png" alt="">
+                            <p class="caption">Original files and their content</p>
+                        </div>
+                        <div class="image-grid">
+                            <img class='', src="../works/imgs/NYC Taxi/Slide 16_9 - 2.png" alt="">
+                            <p class="caption">Matching the ZONEID data with the PUID (Pickup ID) and DOID (Dropoff ID)</p>
+                        </div>
+                        <div class="image-grid">
+                            <img class='', src="../works/imgs/NYC Taxi/Slide 16_9 - 3.png" alt="">
+                            <p class="caption">Creating an array of the information for each</p>
+                        </div>
+                        <div class="image-grid">
+                            <img class='', src="../works/imgs/NYC Taxi/Slide 16_9 - 7.png" alt="">
+                            <p class="caption">Calculating the sum after creating all arrays to speed up processing time</p>
+                        </div>
+                        <div class="image-grid">
+                            <img class='', src="../works/imgs/NYC Taxi/Slide 16_9 - 8.png" alt="">
+                            <p class="caption">Adding the created array's and sums back into the Zone Map unter the ZONEID</p>
+                        </div>
+                        <div class="image-grid">
+                            <img class='', src="../works/imgs/NYC Taxi/Slide 16_9 - 9.png" alt="">
+                            <p class="caption">Naming the new information in the database</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <div class="section">
+                <p class="header">Step 3: Choosing The Visual Structure</p>
+                <br>
+                <div style="display: flex; flex-direction: row;">
+                    <div class="text"> 
+                        <p>During the ideation process, one of the challenges we encountered was deciding how to best visualize the data. Our goal was to create a map that was easy to interpret at a glance, revealing patterns on the surface while also allowing for more detailed exploration through user interaction.</p>
+                        <p>We went through several iterations in pursuit of this goal. Using the Crazy 8 method, we prototyped various visualizations, including node networks, bar charts, 3D pillars, and bubble circles. However, we found that these approaches were either too complex for quickly identifying trends or too simplistic to support deeper analysis through interactions.</p>
+                        <p>Ultimately, we settled on a Choropleth map for our final design. Since our data was location-based, and we were focused on tracking the movement of people across NYC, the Choropleth map offered the best solution. It provided a clear surface-level view of the data while allowing us to seamlessly integrate more interactive elements for further exploration.</p>
+                    </div>
+                    <div class="image-small">
+                        <img src="../works/imgs/NYC Taxi/IMG_4215.jpg" alt="">
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="section">
+                <p class="header">Step 4: Choosing Colors</p>
+                <br>
+                <div class="text">
+                    <p>Choosing the right colors was a major consideration. Our major consideration is that there were two types of information - incoming and outgoing taxi trips that needs to be emphasized. <br><br> We chose our final color palette because: </p>
+                    <ul>
+                        <li><p>The colors show the intensity of the data by using cooler colors for low traffic and warmer colors for high traffic, which is a perceptive norm of "temperature" as density. </li>
+                        <li><p>Similar but different palette for two types of data indicates the relationship while keeping them separate.</li>
+                    </ul>
+                </div>
+                <div class="image-small" style="place-items: center;">
+                    <img src="../works/imgs/NYC Taxi/colors.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="section">
+                <p class="header">Step 5: Creating the Tooltip</p>
+                <br>
+                <div class="text">
+                    <p>Our tooltip is an interaction element implemented to give further details on data of different districts. We placed the tooltip on the side of the map to make sure it does not cover any important information, and the location is consistent at any states to restrain eye movement. Only the top 3 districts that has the highest amount of traffic is shown to keep it concise.</p>
+                    <p>Clicking and hovering mechanism are also integrated into the final interaction.</p>
+                    <ul>
+                        <li><p><b>Clicking:</b> Changing information between incoming and outgoing traffic. Color palette is also changed.</li>
+                        <li><p><b>Hovering:</b> Highlights the hovered district and display the tooltip.</li>
+                    </ul>
+                </div>
+                
+                <div style="display: flex; flex-direction: row; place-content: center;">
+                    <div class="image-small">
+                        <img src="../works/imgs/NYC Taxi/tooltip.png" alt="">
+                    </div>
+                    <div class="image-small">
+                        <img src="../works/imgs/NYC Taxi/ezgif-2-29328441e5.gif" alt="">
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="section">
+                <div class="text">
+                    <p class="header">Conclusion: Compromises and Future Changes</p>
+                    <p>We were only allowed a month of work time to finish this project - which is way too short to fully implement everything we want to do. As a result, we had to compromise a few features when prioritizing certain features over the other to create an interactive map where user follows a story line.</p>
+                    <p>We still plan on editing this project in the future in the following aspects:</p>
+                    <ul>
+                        <li><p>Better Zoom feature - user can zoom in at our current version but it is a little wonky</li>
+                        <li><p>Optimized tooltip feature - the current one has a ~0.5s delay to find and display the data</li>
+                        <li><p>Click changes legend when switching from outgoing to incoming</li>
+                        <li><p>Add a year slider for the user to see information in a time span</p></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom-spacer"></div>
+        </div>
+    </main>
+</body>

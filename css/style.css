@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --background_color: #fdfcf5;
+    --background_color: #f9f7f5;
     --main_color: #0e0e0e;
     --accent_color: #bb2649;
     --container-width: 1600px;
@@ -312,7 +312,7 @@ body.hovering-details .image-description {
     max-width: max-content;
 }
 
-.message p a.link.hoverAnimation {
+.link.hoverAnimation {
     color: var(--accent_color);
     text-decoration: none;
     font-weight: 400;
@@ -320,7 +320,7 @@ body.hovering-details .image-description {
     transition: color 0.3s ease;
 }
 
-.message p a.link.hoverAnimation::after {
+.link.hoverAnimation::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -331,9 +331,381 @@ body.hovering-details .image-description {
     transition: width 0.3s ease, left 0.3s ease;
 }
 
-.message p a.link.hoverAnimation:hover::after {
+.link.hoverAnimation:hover::after {
     width: 100%;
     left: 0;
 }
 
 
+
+.project-gallery {
+    display: flex;
+    gap: 30px;
+    max-width: var(--container-width);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.project-column {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Ensures equal column widths */
+    gap: 30px;
+}
+
+.project-img {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.project-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease; /* Smooth magnification */
+}
+
+.project-img:hover img {
+    transform: scale(1.02); /* Slightly magnify the image */
+}
+
+.project-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Fully covers the image width */
+    height: 100%; /* Fully covers the image height */
+    background-color: rgba(0, 0, 0, 0.85); /* Black overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    border-top: 2px solid var(--background_color);
+    color: var(--background_color);
+    opacity: 0; /* Hidden by default */
+    transform: scale(1); /* Normal size */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-in and scaling */
+}
+
+.project-img:hover .project-text {
+    opacity: 1; /* Make the text visible */
+    transform: scale(1.02); /* Slightly magnify the entire text box */
+}
+
+.title {
+    font-size: 32px;
+}
+
+.project-info {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 10px; /* Add spacing below the text */
+    border-bottom: 1px solid rgba(255, 255, 255, 1); /* Add a light separator line */
+    width: 80%; /* Make the line span the full width of the text block */
+}
+
+.project-img .intro {
+    font-size: 18px;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.intro {
+    max-width: 600px;
+}
+
+.image-box {
+    width: 100%;  /* Full width of the screen */
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+}
+
+/* Image Inside Box */
+.image-box img {
+    max-width: 120%;  /* Ensure image does not overflow width */
+    max-height: 1500px;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+.content {
+    background-color: var(--background_color);
+    z-index: 1;
+    transform: translateY(700px);
+}
+
+.header {
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--main_color);
+    text-wrap: wrap;
+    line-height: 2.8rem;
+}
+
+.text p:not(.header) {
+    font-size: 20px;
+}
+
+.text p {
+    padding: 12px 0px;
+    line-height: 150%;
+}
+
+.section {
+    margin: auto;
+    max-width: 1350px;
+    padding: 30px
+}
+
+.grid {
+    display: block;
+    margin: auto;
+}
+
+.text-breaker {
+    width: 100%;  /* Line takes up 80% of the container width */
+    height: 2px;  /* Thin horizontal line */
+    background-color: var(--main_color);  /* Line color */
+    margin: 40px auto;  /* Center horizontally with spacing above/below */
+}
+
+.bottom-spacer {
+    padding-top: 100px;
+}
+
+.info p {
+    font-size: large;
+    padding: 1px 0px;
+}
+
+.caption {
+    font-style: italic;
+    font-size: smaller;
+    color: var(--main_color);
+    padding-top: 5px;
+    text-align: center;
+} 
+
+.quote {
+    font-size: 30px;
+    border-left: 2px solid #999999;
+    padding: 0px 10px;
+    width: 70%;
+    font-weight: 400;
+    color: #474747;
+    margin: 0px 20px;
+}
+
+.quote b {
+    color: var(--background_color);
+}
+
+.text ol, .text ul {
+    transform: translateX(40px);
+}
+
+.image-reg img {
+    max-width: 90%;
+    max-height: 70vh;
+    padding: 0px 40px;
+    margin: 60px auto 0px;
+    display: block;
+}
+
+.image-reg {
+    margin: 0px 0px 60px;
+}
+
+.intro-quote {
+    margin: 300px auto;
+    font-size: 40px;
+    font-style: italic;
+    text-align: center;
+}
+
+.image-small img {
+    max-width: 100%;
+    display: block;
+    margin: 20px 30px;
+}
+
+.image-med img {
+    width: 80%;
+    display: block;
+    margin: 60px auto;
+}
+
+video {
+    max-width: 80%;
+    display: block;
+    margin: 100px auto 0px;
+}
+
+.grid {
+    display: block;
+    margin: auto;
+}
+
+.pic-grid {
+    max-width: 100%;
+    padding: 0px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-evenly;
+    row-gap: 50px;
+}
+
+.pic-grid .image-grid  {
+    max-width: 45%;
+    min-width: 300px;
+}
+
+.image-grid  img {
+    width: 100%;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--accent_color);
+}
+
+
+
+
+
+
+
+/* 
+
+
+
+
+
+
+
+
+
+.text ol, .text ul{
+    transform: translateX(50px);
+}
+
+
+
+
+
+.logo {
+    width: 150px;
+    position: absolute;
+    margin: 20px 20px;
+    color: #FF8066;
+}
+
+
+
+.message {
+    width: 800px;
+}
+
+.message p {
+    padding: 15px;
+
+}
+
+.header {
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--main_color);
+    text-wrap: wrap;
+    line-height: 2.8rem;
+   
+}
+
+.slantedStyle {
+    font-style: italic;
+}
+
+.subheader {
+    font-size: 35px;
+    font-weight: 400;
+    color: var(--main_color);
+    width: 800px;
+    padding: 15px;
+}
+
+
+.picturegrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: var(--container-width);
+}
+
+.picturegrid * {
+    max-width: 700px;
+    min-width: 300px;
+    padding: 10px;
+    text-align: center;
+}
+
+.large {
+    max-width: 85vw;
+
+}
+
+iframe {
+    width: 90%;
+    height: 900px;
+    margin: 60px auto;
+    display: block;
+}
+
+.picturegrid div {
+    margin: 0px 40px 60px;
+}
+
+
+.picturesection {
+    width: 750px; 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+
+.container {
+    max-width: var(--container-width);
+    margin: auto;
+    display: flex;
+    overflow: hidden;
+    justify-items: space-evenly;
+}
+
+.active {
+    color: #FF8066;
+    text-align: left;
+} */

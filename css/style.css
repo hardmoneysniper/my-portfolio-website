@@ -54,7 +54,7 @@ header nav {
 header ul {
     display: inline-flex;
     list-style: none;
-    column-gap: 100px;
+    column-gap: 70px;
     text-wrap: wrap;
 }
 
@@ -63,7 +63,7 @@ header ul a {
     color: var(--main_color);
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 28px;
     padding: 0px 10px;
 }
 
@@ -89,7 +89,7 @@ header ul a {
     background-position: center; /* center the image */
     background-repeat: no-repeat;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
 }
 
 .slide.active {

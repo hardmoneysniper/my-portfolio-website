@@ -709,3 +709,154 @@ iframe {
     color: #FF8066;
     text-align: left;
 } */
+
+/* Responsive Design for Phones */
+@media (max-width: 768px) {
+    :root {
+        --container-width: 95vw;
+    }
+
+    .container {
+        padding-top: 160px;
+    }
+
+    /* Header and Navigation */
+    header {
+        padding: 10px 20px;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    header ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header ul a {
+        font-size: 20px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    /* Slideshow Adjustments */
+    .slideshow-container {
+        top: 80px;
+        height: calc(100vh - 80px);
+    }
+
+    .name-bold {
+        font-size: 40px;
+    }
+
+    .titles {
+        font-size: 18px;
+    }
+
+    /* Overlay Content */
+    .details-container {
+        bottom: 10px;
+        right: 10px;
+        font-size: 14px;
+    }
+
+    .image-description {
+        font-size: 14px;
+        max-width: 90%;
+    }
+
+    .details-button {
+        font-size: 18px;
+    }
+
+    /* Text Container Adjustments */
+    .text-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .each-section {
+        padding: 0;
+    }
+
+    .section-title {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .message p {
+        font-size: 16px;
+    }
+
+    /* Skills Section */
+    .skills-categories {
+        gap: 5px;
+    }
+
+    .category-title {
+        font-size: 16px;
+    }
+
+    .skills-list {
+        font-size: 14px;
+    }
+
+    /* Project Gallery */
+    .project-gallery {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .project-column {
+        gap: 15px;
+    }
+
+    .project-img img {
+        border-radius: 5px;
+    }
+
+    /* Footer and Miscellaneous */
+    .spacer {
+        height: 30px;
+    }
+
+    .link.hoverAnimation {
+        font-size: 14px;
+    }
+}
+
+/* Additional breakpoint for very small screens */
+@media (max-width: 480px) {
+    .name-bold {
+        font-size: 30px;
+    }
+
+    .header {
+        font-size: 30px;
+    }
+
+    .titles {
+        font-size: 14px;
+    }
+
+    .details-button {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .message p {
+        font-size: 14px;
+    }
+
+    .skills-list {
+        font-size: 12px;
+    }
+}

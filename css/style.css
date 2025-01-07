@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 :root {
     --background_color: #f9f7f5;
     --main_color: #0e0e0e;
@@ -22,7 +21,7 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', serif;
     background-color: var(--background_color);
 }
 
@@ -573,7 +572,7 @@ video {
     min-width: 300px;
 }
 
-.image-grid  img {
+.image-grid img {
     width: 100%;
 }
 
@@ -581,8 +580,6 @@ video {
     text-decoration: none;
     color: var(--accent_color);
 }
-
-
 
 
 
@@ -711,7 +708,7 @@ iframe {
 } */
 
 /* Responsive Design for Phones */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     :root {
         --container-width: 95vw;
     }
@@ -795,7 +792,7 @@ iframe {
 
     /* Skills Section */
     .skills-categories {
-        gap: 5px;
+        flex-direction: column;
     }
 
     .category-title {

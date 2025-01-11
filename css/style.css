@@ -491,7 +491,6 @@ body.hovering-details .image-description {
 
 .caption {
     font-style: italic;
-    font-size: smaller;
     color: var(--main_color);
     padding-top: 5px;
     text-align: center;
@@ -559,7 +558,6 @@ video {
 
 .pic-grid {
     max-width: 100%;
-    padding: 0px 30px;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
@@ -719,7 +717,7 @@ iframe {
 
     /* Header and Navigation */
     header {
-        padding: 10px 20px;
+        padding: 10px;
     }
 
     header nav {

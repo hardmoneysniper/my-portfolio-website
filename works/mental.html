@@ -20,6 +20,233 @@
         </nav>
     </header>
     
-    
+    <main>
+        <div class="spacer"></div>
+        <div class="image-box">
+            <img src="../works/imgs/330/header.png" alt="Project Image">
+        </div>
+        <div class="content">
+            <div class="spacer"></div>
+            <div class="section">
+                <div class="text">
+                    <p class="header">Accessing CAPS: Onboarding Form Redesign</p>
+                    <span class="info">
+                        <p><b>Course: </b>UT 330: Interaction Design and Urban Experiences</p>
+                        <p><b>Professor: </b>Matthew Wizinsky</p>
+                        <p><b>Teammates:</b> Katherine Cafaro, Ethan Casler</p>
+                        <p><b>Responsibilities: </b> 
+                            <ul style="font-size: 18px">
+                                <li>Interviews and meetings with stakeholder representatives</li>
+                                <li>Producing the cost and benefit analysis</li>
+                                <li>Present at the 2024 TTT Finals @ Philadelphia</li>
+                            </ul>
+                        </p>
+                        <p><b>Skills:</b> 
+                            <ul style="font-size: 18px">
+                                <li>Transportation Engineering</li>
+                                <li>Stakeholder Considerations</li>
+                                <li>Financial Analysis</li>
+                            </ul>
+                        </p>
+                </div>
+                <div class="text-breaker"></div>
+                <div class="text">
+                    <p>This project is a solution that improves vulnerable road user (VRU) safety in the I-375 Reconnecting Communities Project by leveraging cutting-edge technology in collaboration with HNTB and MDOT. </p>
+                </div>
+            </div>
+
+            <div class="section">
+                <p class="header">Part 1: Choosing the Topic</p>
+                <div class="grid" style="margin-top: 50px;">
+                    <div class="pic-grid">
+                        <div class="image-grid">
+                            <div class="text">
+                                <p>During our first stakeholder meeting, representatives from MDOT and HNTB listed 3 projects they are working on to help us pivot our research topic: </p>
+                                <ul style="font-size: 20px">
+                                    <li>Flex lane - Hard shoulder running on I-94 between Ann Arbor-Saline Road and US-23 to help move traffic during peak travel times</li>
+                                    <li>I-375 Remodeling - This project will remove the freeway and replace it with an at-grade boulevard and adjacent side streets between I-75 and Jefferson Avenue</li>
+                                    <li>Public international border crossings - Border traffic dispersion around the bridge plazas</li>
+                                </ul>
+                                <p>We eventually chose the I-375 project because it is directly related to 2024 TTT's theme of "safety" and we can do more than just an engineering solution. </p>
+                            </div>
+                            <br>
+                            <img class='', src="../works/imgs/TTT reconnect/street.png" alt="">
+                            <p class="caption">Street viewpoint of a specific intersection</p>
+                        </div>
+                        <div class="image-grid">
+                            <img class='', src="../works/imgs/TTT reconnect/map.png" alt="">
+                            <p class="caption">Project footprint</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <br>
+                <p class="header">Part 2: Brainstorming Technologies</p>
+                <br>
+                <div class="text">
+                    <p>After finishing reviewing literatures, we came up with some sources to take inspiration from: </p>
+                    <ul style="font-size: 20px">
+                        <li>Complete streets: 
+                            <ul>
+                                <li>Infrared sensors to detect people that give signals to motor vehicles</li>
+                                <li>Nighttime communication - improving perception of pedestrians at nighttime</li>
+                            </ul>
+                        </li>
+                        <li>PedPal, an app that connects with the signaling system and adjust signal cycles for pedestrians</li>
+                        <li>Median design</li>
+                        <li>Vehicle Speed Reduction Technology</li>
+                        <li>Traffic signaling technology and placement</li>
+                        <li>Machine Learning - Syetem automation and self-sustaining</li>
+                        <li>Add signage to island</li>
+                        <li>Geofencing - Take concept and achieve the same means with local sensing</li>
+                    </ul>
+                </div>
+                <br><br>
+                <div class="text" style="text-align: center;">
+                    <img style="max-width: 70vw;", src="../works/imgs/TTT reconnect/sample.png" alt="">
+                    <p class="caption">A Sample Detection System We Proposed</p>
+                </div>
+                <div class="text">
+                    <p>From here, we determined the main theme of our project: </p>
+                    <div style="text-align: center;">
+                        <p style="font-size: 28px"><i>Reconnecting Communities by Improving Vulnerable Road User Safety</i></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <p class="header">Part 3: Designing the Solution Strategy and System Architecture</p>
+                <br>
+                <div class="text">
+                    <p>We need a robust structure to integrate various ITS functionalities and technology together, and a task flow of how this system deals with normal and abnormal roadway conditions. Here, an approach we agreed on guided the design: </p>
+                    <p style="font-weight: 300"><i>Leverage sensing technologies to improve conflict prediction, reaction, and responsein real-time to reduce intersection conflicts between automobiles and VRU(vulnerable road user)s.</i></p>
+                    <p>For instance, in the case of incident response, we proposed this strategy: </p>
+                </div>
+                <div class="text" style="text-align: center;">
+                    <img style="max-width: 70vw;", src="../works/imgs/TTT reconnect/incident.png" alt="">
+                </div>
+                <br>
+                <div class="pic-grid">
+                    <div class="image-grid">
+                        <img class='', src="../works/imgs/TTT reconnect/risk_mapping.gif" alt="">
+                        <p class="caption">Risk Mapping</p>
+                    </div>
+                    <div class="image-grid">
+                        <img class='', src="../works/imgs/TTT reconnect/crash_alert.png" alt="">
+                        <p class="caption">Incident Detection</p>
+                    </div>
+                </div>
+                <br>
+                <div class="text">
+                    <p>And here is our final system architecture: </p>
+                </div>
+                <div class="pic-grid">
+                    <div class="image-grid">
+                        <img class='', src="../works/imgs/TTT reconnect/sysarc1.png" alt="">
+                    </div>
+                    <div class="image-grid">
+                        <img class='', src="../works/imgs/TTT reconnect/sysarc2.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <br>
+                <p class="header">Part 4: Constructing the Concept of Operations (ConOps)</p>
+                <br>
+                <div class="text">
+                    <p>Based on the research we already have, everything including the problem statement, solution statement, and anticipated short term and long term impacts with a cost and benefit estimation and analysis is built up into a 10-page document. </p>
+                    <p><a target="_blank" href="https://transops.s3.amazonaws.com/uploaded_files/2024-07/ConOps-UMich-TTT-2024-Submission_1.pdf" class="link hoverAnimation">Click to view our ConOps</a></p>
+                    <p>Other than leveraging advanced technology in a system, the end goal of our project is to improve the travel experience for pedestrians, cyclists, and other vulnerable road users and eventually improve the willingness to "cross the road" and reconnect once-split neighborhoods and build stronger community connections. </p>
+                    <p><a target="_blank" href="https://www.youtube.com/watch?v=yfhwagU5y9U&list=WL&index=4&t=7s&pp=gAQBiAQB" class="link hoverAnimation">Click to view our team interview video</a></p>
+                    <p>The anticipated benefits of our project are: </p>
+                    <ul style="font-size: 20px">
+                        <li>Safety: 
+                            <ul>
+                                <li>Enhanced road user perceptions</li>
+                                <li>Incident management system improves EMS response</li>
+                            </ul>
+                            <br>
+                        </li>
+                        
+                        <li>Operational: 
+                            <ul>
+                                <li>Automation reduces human oversight</li>
+                                <li>Self-sustaining through continuous data collection</li>
+                                <li>Generalizable to connected vehicles</li>
+                            </ul>
+                            <br>
+                        </li>
+                        
+                        <li>Community: 
+                            <ul>
+                                <li>Improved walkability reconnects neighborhoods</li>
+                                <li>Promotes sustainable transportation</li>
+                            </ul>
+                            <br>
+                        </li>
+                        
+                    </ul>
+                    <p>The anticipated challenges of our project are: </p>
+                    <ul style="font-size: 20px">
+                        <li>Accuracy: 
+                            <ul>
+                                <li>No AI detection method can achieve 100% accuracy</li>
+                                <li>System must be robust against model error</li>
+                            </ul>
+                            <p>To buffer these challenges...</p>
+                            <ul>
+                                <li>Redundant system architecture</li>
+                                <li>Continued advancements in AI</li>
+                            </ul>
+                            <br>
+                        </li>
+                        
+                        <li>Trust: 
+                            <ul>
+                                <li>Camera usage brings privacy concerns</li>
+                                <li>Communities may not immediately embrace new technology</li>
+                            </ul>
+                            <p>To buffer these challenges...</p>
+                            <ul>
+                                <li>Need for community outreach to build public acceptance</li>
+                            </ul>
+                            <br>
+                        </li>
+                        
+                        <li>Cost:  
+                            <ul>
+                                <li>Balancing equipment quality vs cost</li>
+                            </ul>
+                            <p>To buffer these challenges...</p>
+                            <ul>
+                                <li>Low investment for proof-of-concept on a single intersection</li>
+                            </ul>
+                            <br>
+                        </li>
+                    </ul>
+                </div>
+                <br>
+                <div class="text" style="text-align: center;">
+                    <img style="max-width: 70vw;", src="../works/imgs/TTT reconnect/vms.png" alt="">
+                    <p class="caption">Variable Message Sign placement and design (physical infrastructure)</p>
+                </div>
+                <br>
+                <div class="text" style="text-align: center;">
+                    <img style="max-width: 70vw;", src="../works/imgs/TTT reconnect/costbenefit.png" alt="">
+                    <p class="caption">Part of the cost and benefit analysis</p>
+                </div>
+                <br>
+                <div class="text" style="text-align: center;">
+                    <img style="max-width: 70vw;", src="../works/imgs/TTT reconnect/bcr.png" alt="">
+                    <p class="caption">Our Benefit and Cost Ratio</p>
+                </div>
+            </div>
+            
+            <div class="bottom-spacer"></div>
+        </div>
+    </main>
 
 </body>

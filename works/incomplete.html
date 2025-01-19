@@ -6,6 +6,7 @@
     <title>My Works</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../images/icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -45,30 +46,40 @@
 
             <div class="section">
                 <p class="header">Part 0: Summarize Observations and Element Creation</p>
-                <div class="grid" style="margin-top: 50px;">
-                    <div class="pic-grid">
-                        <div class="image-grid">
-                            <div class="text">
-                                <p>I created these 5 elements - a balcony, a boardwalk, a coffee shop, a fruit shop, and a beach - to add to our city. They soon became some of the most welcomed props to add to the city for the concept of mixed-use housing and the creation of a comfy outdoor lifestyle.</p>
-                            </div>
+                <br>
+                <div class="text">
+                    <p>I created these 5 elements - a balcony, a boardwalk, a coffee shop, a fruit shop, and a beach - to add to our city. They soon became some of the most welcomed props to add to the city for the concept of mixed-use housing and the creation of a comfy outdoor lifestyle.</p>
+                </div>
+                <br>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../works/imgs/The Incomplete City/boardwalk.jpg" alt="Image 1">
+                            <p class="caption">Boardwalk</p>
                         </div>
-                        <div class="image-grid">
-                            <img class='', src="../works/imgs/The Incomplete City/boardwalk.jpg" alt="">
+                        <div class="swiper-slide">
+                            <img src="../works/imgs/The Incomplete City/coffee.jpg" alt="Image 2">
+                            <p class="caption">Coffee shop</p>
                         </div>
-                        <div class="image-grid">
-                            <img class='', src="../works/imgs/The Incomplete City/coffee.jpg" alt="">
+                        <div class="swiper-slide">
+                            <img src="../works/imgs/The Incomplete City/modular beach.jpg" alt="Image 3">
+                            <p class="caption">Beach</p>
                         </div>
-                        <div class="image-grid">
-                            <img class='', src="../works/imgs/The Incomplete City/modular beach.jpg" alt="">
+                        <div class="swiper-slide">
+                            <img src="../works/imgs/The Incomplete City/balcony.png" alt="Image 3">
+                            <p class="caption">Balcony</p>
                         </div>
-                        <div class="image-grid">
-                            <img class='', src="../works/imgs/The Incomplete City/balcony.jpg" alt="">
-                        </div>
-                        <div class="image-grid">
-                            <img class='', src="../works/imgs/The Incomplete City/fruit.jpg" alt="">
+                        <div class="swiper-slide">
+                            <img src="../works/imgs/The Incomplete City/fruit.jpg" alt="Image 3">
+                            <p class="caption">Fruit shop</p>
                         </div>
                     </div>
-                </div>
+                    <!-- Navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <!-- Pagination dots -->
+                    <div class="swiper-pagination"></div>
+                  </div>
             </div>
 
             <div class="section">
@@ -120,26 +131,30 @@
             <div class="section">
                 <p class="header">Part 3: Combine Districts into a City</p>
                 <br>
-                <div class="grid" style="margin-top: 50px;">
-                    <div class="pic-grid">
-                        <div class="image-grid">
-                            <div class="text">
-                                <p>Eventually, we combine these neighborhoods into a city. As one of the designers of the transit system, we included multiple transit methods including <b>train</b>, <b>subway</b>, <b>bus</b>, and <b>jet ski</b> for our houseboat population. We closed most roads in residential communities to only allow emergency vehicles, scooters, and bikes.</p>
-                            </div>
-                        </div>
-                        <div class="image-grid">
+                <div class="text">
+                    <p>Eventually, we combine these neighborhoods into a city. As one of the designers of the transit system, we included multiple transit methods including <b>train</b>, <b>subway</b>, <b>bus</b>, and <b>jet ski</b> for our houseboat population. We closed most roads in residential communities to only allow emergency vehicles, scooters, and bikes.</p>
+                </div>
+                <br>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
                             <img class='', src="../works/imgs/The Incomplete City/IMG_7859.JPEG" alt="">
                             <p class="caption">City Masterplan</p>
                         </div>
-                        <div class="image-grid">
+                        <div class="swiper-slide">
                             <img class='', src="../works/imgs/The Incomplete City/IMG_7847.JPEG" alt="">
                             <p class="caption">Draft I</p>
                         </div>
-                        <div class="image-grid">
+                        <div class="swiper-slide">
                             <img class='', src="../works/imgs/The Incomplete City/IMG_8736.JPEG" alt="">
                             <p class="caption">Draft II</p>
                         </div>
                     </div>
+                    <!-- Navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <!-- Pagination dots -->
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
 
@@ -155,13 +170,28 @@
                     <p>And ladies and gentlemen, welcome to <b>Skuld</b>! The name originates from the goddess of the future in Norse mythology. Upon the creation of this city, we hope to find a new possibility for future urbanism and revitalization of cities nowadays with the boldest imagination. The hardest part of this project is the incorporation of public transit, as we need to connect each node across the city throughout the districts when discussing with different stakeholder groups how the routes should connect to their population.</p>
                 </div>
                 <br><br>
-                <div class="image-grid">
+                <div class="view-window">
                     <img class='', src="../works/imgs/The Incomplete City/3.jpg" alt="">
-                    <p class="caption">The Final "Incomplete" City</p>
                 </div>
+                <p class="caption">The Final "Incomplete" City</p>
             </div>
             <div class="bottom-spacer"></div>
         </div>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        loop: true, // Infinite looping
+        });
+    </script>
 
 </body>

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 :root {
-    --background_color: #f9f7f5;
+    /* --background_color: #f9f7f5; */
+    --background_color: #ffffff;
     --main_color: #0e0e0e;
     --accent_color: #bb2649;
     --container-width: 1600px;
@@ -579,27 +580,58 @@ video {
     color: var(--accent_color);
 }
 
+.view-window {
+    width: 100%; /* Full width of the screen */
+    height: 680px; /* Desired height */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    white-space: nowrap; /* Prevent wrapping of content */
+    border: 2px solid #ddd; /* Optional styling */
+    cursor: grab; /* Indicate draggable area */
+}
 
+/* Large image */
+.view-window img {
+    height: 100%; /* Fit the image to the height of the container */
+}
 
+/* Prevent selection during drag */
+.view-window:active {
+    cursor: grabbing;
+}
 
+.swiper {
+    width: 100%;
+    max-width: 1000px; /* Adjust as needed */
+    height: 700px;   /* Fixed height for the container */
+    margin: auto;    /* Center on the page */
+    align-items: center;
+}
 
-/* 
+/* Swiper slides should fill the container */
+.swiper-slide {
+    display: flex;            /* Center content inside the slide */
+    flex-direction: column;    /* Stack image and caption vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
-
-
-
-
-
-
-
-
-.text ol, .text ul{
-    transform: translateX(50px);
+/* Images inside the slides */
+.swiper-slide img {
+    max-width: 100%;          /* Fit within the slide's width */
+    max-height: 90%;         /* Fit within the slide's height */
+    object-fit: contain;      /* Maintain aspect ratio, prevent cropping */
+    padding: 0px 40px 0px 40px;
+    align-items: center;
 }
 
 
 
-
+/* 
+.text ol, .text ul{
+    transform: translateX(50px);
+}
 
 .logo {
     width: 150px;
@@ -607,8 +639,6 @@ video {
     margin: 20px 20px;
     color: #FF8066;
 }
-
-
 
 .message {
     width: 800px;

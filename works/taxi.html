@@ -6,6 +6,7 @@
     <title>My Works</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../images/icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -79,7 +80,41 @@
                 <div class="text">
                     <p>The data sets chosen were NYC Yellow Taxi Trips 2018 and NYC District Zones. Both datasets were pulled from NYC Open Data. JavaScript and d3.js was used to merge the databases together. Below are the steps on how the files were merged to create the final database where our visualization pulls from:</p>
                 </div>
-                <div class="grid" style="margin-top: 100px;">
+                <br>
+                <div class="swiper" style="height: 580px">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img class='', src="../works/imgs/NYC Taxi/Slide 16_9 - 1.png" alt="">
+                            <p class="caption">1. Original files and their content</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img class='', src="../works/imgs/NYC Taxi/Slide 16_9 - 2.png" alt="">
+                            <p class="caption">2. Matching the ZONEID data with the PUID (Pickup ID) and DOID (Dropoff ID)</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img class='', src="../works/imgs/NYC Taxi/Slide 16_9 - 3.png" alt="">
+                            <p class="caption">3. Creating an array of the information for each</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img class='', src="../works/imgs/NYC Taxi/Slide 16_9 - 7.png" alt="">
+                            <p class="caption">4. Calculating the sum after creating all arrays to speed up processing time</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img class='', src="../works/imgs/NYC Taxi/Slide 16_9 - 8.png" alt="">
+                            <p class="caption">5. Adding the created array's and sums back into the Zone Map unter the ZONEID</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <img class='', src="../works/imgs/NYC Taxi/Slide 16_9 - 9.png" alt="">
+                            <p class="caption">6. Naming the new information in the database</p>
+                        </div>
+                    </div>
+                    <!-- Navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <!-- Pagination dots -->
+                    <div class="swiper-pagination"></div>
+                </div>
+                <!-- <div class="grid" style="margin-top: 100px;">
                     <div class="pic-grid">
                         <div class="image-grid">
                             <img class='', src="../works/imgs/NYC Taxi/Slide 16_9 - 1.png" alt="">
@@ -106,10 +141,8 @@
                             <p class="caption">Naming the new information in the database</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
-
-            
 
             <div class="section">
                 <p class="header">Step 3: Choosing The Visual Structure</p>
@@ -181,4 +214,19 @@
             <div class="bottom-spacer"></div>
         </div>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        loop: true, // Infinite looping
+        });
+    </script>
 </body>

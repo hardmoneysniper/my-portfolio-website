@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 :root {
     /* --background_color: #f9f7f5; */
     --background_color: #ffffff;
@@ -22,7 +22,7 @@
 }
 
 body {
-    font-family: 'Nunito', serif;
+    font-family: 'Libre Franklin', serif;
     background-color: var(--background_color);
 }
 
@@ -62,7 +62,7 @@ header ul a {
     text-decoration: none;
     color: var(--main_color);
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 28px;
     padding: 0px 10px;
 }
@@ -122,7 +122,7 @@ header ul a {
 .name-bold {
     font-size: 80px;
     z-index: 10;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--main_color);
     pointer-events: auto;
     text-align: center;
@@ -135,7 +135,7 @@ header ul a {
     align-items: center;
     justify-content: center;
     font-size: 32px;
-    font-weight: 400;
+    font-weight: 300;
     opacity: 1; /* ensures it starts visible */
     transition: opacity 0.3s ease; /* adds a smooth fade for opacity changes */
 }
@@ -174,7 +174,7 @@ header ul a {
 .details-button {
     color: var(--main_color);
     font-size: 40px;
-    font-weight: 600;
+    font-weight: 300;
     text-decoration: none;
     position: relative;
     pointer-events: auto;
@@ -274,7 +274,7 @@ body.hovering-details .image-description {
 
 .category-title {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 10px;
     color: var(--main_color); /* Darker color for emphasis */
 }
@@ -315,7 +315,7 @@ body.hovering-details .image-description {
 .link.hoverAnimation {
     color: var(--accent_color);
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 300;
     position: relative;
     transition: color 0.3s ease;
 }
@@ -448,7 +448,7 @@ body.hovering-details .image-description {
 
 .header {
     font-size: 42px;
-    font-weight: 400;
+    font-weight: 300;
     color: var(--main_color);
     text-wrap: wrap;
     line-height: 2.8rem;
@@ -502,7 +502,7 @@ body.hovering-details .image-description {
     border-left: 2px solid #999999;
     padding: 0px 10px;
     width: 70%;
-    font-weight: 400;
+    font-weight: 300;
     color: #474747;
     margin: 0px 20px;
 }

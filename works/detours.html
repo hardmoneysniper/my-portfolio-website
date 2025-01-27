@@ -20,6 +20,110 @@
         </nav>
     </header>
     
-    
+    <main>
+        <div class="spacer"></div>
+        <div class="image-box">
+            <img src="../works/imgs/detours/Group 34 narrow.png" alt="Project Image">
+        </div>
+        <div class="content">
+            <div class="spacer"></div>
+            <div class="section">
+                <div class="text">
+                    <p class="header">"Safe Detours"</p>
+                    <span class="info">
+                        <p><b>Category: </b>Self-guided Project</p>
+                        <p><b>Skills:</b> Data Mining, Machine Learning, Natural Language Processing</p>
+                        <p><b>Tools:</b> MIT ade20k dataset, Python, PyTorch, ArcGIS Pro, Google Maps API, Twitter API, Figma</p>
+                </div>
+                <div class="text-breaker"></div>
+                <div class="text">
+                    <p>This project leverages machine learning techniques to predict perceived cycling safety in Austin, Texas with visual and ethnographical data. The data inform a mobile application that assists cyclists  to identify potential accident risks on their routes and suggests safer detours.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <p class="header">Step 1: Area of Interest Selection & Dataset Creation</p>
+                <br>
+                <div class="text">
+                    <p>After confirming the topic, I selected the area bounded by coordinates (30.2711(S), 30.2956(N), -97.7437(W), -97.6870(E)) as the area for data mining.  </p>
+                </div>
+                <div class="text", style="text-align: center;">
+                    <img style="max-width: 60vw;", src="../works/imgs/detours/interestarea.png" alt="">
+                    <p class="caption">The Area of Interest</p>
+                </div>
+                <br>
+                <div class="text">
+                    <p style="font-size: 28px"><b>Part 1: Request Point Generation & Google Street View images acquisition</b></p>
+                    <p>Then, the request points for google street view API Image Acquisition is generated at every point with a GSV photo within the research area - which is <b>5,502</b> points. Photos with a FOV of 120° for 0°, 90°, 180°, 270° in relation to the initial camera position is acquired, which makes the total amount of images 22,008. These photos, each has a resolution of 600*400 pixels, will be used as the initial data for image segmentation. </p>
+                </div>
+                <div class="text", style="text-align: center;">
+                    <img style="max-width: 70vw;", src="../works/imgs/detours/Image sample.png" alt="">
+                    <p class="caption">Two samples of the images acquired at each point</p>
+                </div>
+                <br>
+                <div class="text">
+                    <p style="font-size: 28px"><b>Part 2: DPT Image Segmentation Based on MIT ade20k Model</b></p>
+                    <p>For a general adaptability of the segmentation scores, I selected MIT's ade20k model and applied image segmentation using DPT, generating segmented images and a csv table of the score of each object (scoring sheet) that is recognized and segmented from the image. The image below is the segmented images of the same images shown in part 1. </p>
+                </div>
+                <div class="text", style="text-align: center;">
+                    <img style="max-width: 70vw;", src="../works/imgs/detours/image sample segmented.png" alt="">
+                    <p class="caption">Segmentation results of images shown in part 1</p>
+                </div>
+                <div class="text">
+                    <p style="font-size: 28px"><b>Part 3: Establishment of Scoring Sheet</b></p>
+                    <p>After segmenting the image, a script runs and generates a scoring sheet of segmentation for each image. This is a visual demo of its process. </p>
+                </div>
+                <div class="text", style="text-align: center;">
+                    <img style="max-width: 50vw;", src="../works/imgs/detours/seg demo.png" alt="">
+                    <p class="caption">Scoring Sheet Creation Visualized Demo</p>
+                </div>
+            </div>
+            
+
+            <div class="section">
+                <br>
+                <p class="header">Step 2: Random Forest Training and Prediction</p>
+                <br>
+                <div class="text">
+                    <p style="font-size: 28px"><b>Part 1: Perceived Cycling Safety Index Training</b></p>
+                    <p>To supplement the training model with empirical data to make it more accurate, I designed a one-question surveys, disseminated them to different people, and collected 20 responses. Due to a lack of time, I used expert learning - using 20 images as an example and the rest 160 as an exam - to finish the 200 sets of survey data for initiating the random forest training model. </p>
+                    <p>The question: <b>How safe from accidents would you think you will be if you are cycling here?</b></p>
+                    <p>The scale: </p>
+                </div>
+                <div class="text", style="text-align: left;">
+                    <img style="max-width: 20vw;", src="../works/imgs/detours/scale.png" alt="">
+                </div>
+                <br><br>
+                <div class="text">
+                    <p style="font-size: 28px"><b>Part 2: Perceived Cycling Safety Index Prediction</b></p>
+                    <p>Then, after running the model and generating a csv of perceived cycling safety index, I appended this csv to correspond to the coordinates of their corresponding GSV photos in ArcGIS Pro, and visualized the scores only at road intersections. </p>
+                </div>
+                <div class="text", style="text-align: center;">
+                    <img style="max-width: 70vw;", src="../works/imgs/detours/Screenshot 2025-01-26 235452.png" alt="">
+                    <img style="max-width: 60vw;", src="../works/imgs/detours/scales.png" alt="">
+                    <p class="caption">Final Visualization</p>
+                </div>
+            </div>
+
+            
+
+            <div class="section">
+                <p class="header">Step 3: Product Design (The "Safe Detours" App)</p>
+                <br>
+                <div class="text">
+                    <p>Due to time constraints, I only finished part of the development of the prototype. Here is the design toolkit of the system and the 4 core-functionality screens:</p>
+                </div>
+                <br>
+                <div class="text", style="text-align: center;">
+                    <img style="max-width: 80vw;", src="../works/imgs/detours/designkit.png" alt="">
+                    <p class="caption">Design kit</p>
+                    <br>
+                    <img style="max-width: 80vw;", src="../works/imgs/detours/prototype.png" alt="">
+                    <p class="caption">From left to right: <br>Information view - "Safe Detours" disabled<br>Information view - "Safe Detours" enabled<br>Navigation view - "Safe Detours" disabled<br>Navigation view - "Safe Detours" enabled</p>
+            </div>
+
+            <div class="bottom-spacer"></div>
+        </div>
+    </main>
 
 </body>

@@ -6,6 +6,7 @@
     <title>My Works</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../images/icon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -29,7 +30,7 @@
             <div class="spacer"></div>
             <div class="section">
                 <div class="text">
-                    <p class="header">Accessing CAPS: Onboarding Form Redesign (Under Construction)</p>
+                    <p class="header">Accessing CAPS: Onboarding Form Redesign</p>
                     <span class="info">
                         <p><b>Course: </b>Interaction Design and Urban Experiences</p>
                         <p><b>Professor: </b>Matthew Wizinsky</p>
@@ -166,21 +167,6 @@
                 <br><br>
 
                 <div class="text">
-                    <p>We also confirmed its position within the CAPS information architecture: </p>
-                    <!-- <div class="grid">
-                        <div class="pic-grid">
-                            <div class="image-grid">
-                                <img class='', src="../works/imgs/330/infoarch.png" alt="">
-                            </div>
-                        </div>
-                    </div> -->
-                    <div class="text" style="text-align: center;">
-                        <img style="max-width: 60vw;", src="../works/imgs/330/infoarch.png" alt="">
-                    </div>
-                </div>
-                <br><br>
-
-                <div class="text">
                     <p>After confirming the interactive system of focus for the project, which is the CAPS Initial Consultation Form, we fleshed out other proposals and narrowed our how-might-we question down to a more specific design inquiry: </p>
                     <p style="font-size: 24px; font-style: italic;">How might we improve U-M students' experience accessing mental health services provided by Counseling and Psychological Services (CAPS) through re-designing its Initial Consultation form?</p>
                 </div>
@@ -191,128 +177,132 @@
                 <p class="header">Step 3: Develop</p>
                 <br>
                 <div class="text">
-                    <p>We need a robust structure to integrate various ITS functionalities and technology together, and a task flow of how this system deals with normal and abnormal roadway conditions. Here, an approach we agreed on guided the design: </p>
-                    <p style="font-weight: 300"><i>Leverage sensing technologies to improve conflict prediction, reaction, and responsein real-time to reduce intersection conflicts between automobiles and VRU(vulnerable road user)s.</i></p>
-                    <p>For instance, in the case of incident response, we proposed this strategy: </p>
+                    <p>In the development stage, the "cone" of design opens again - which means that we can start our design process, integrating more ideas into more versions of the prototype. So, in this period of time, we confirmed the position of improvement in the information architecture, improved the proposal, analyzed the current task flow, drew our versions of optimized task flows and a LOT of paper prototypes. </p>
+                </div>
+                <div class="text">
+                    <p>The information architecture is as follows, with the position of CAPS Initial Consultation Form settling in the orange box: </p>
                 </div>
                 <div class="text" style="text-align: center;">
-                    <img style="max-width: 70vw;", src="../works/imgs/TTT reconnect/incident.png" alt="">
-                </div>
-                <br>
-                <div class="pic-grid">
-                    <div class="image-grid">
-                        <img class='', src="../works/imgs/TTT reconnect/risk_mapping.gif" alt="">
-                        <p class="caption">Risk Mapping</p>
-                    </div>
-                    <div class="image-grid">
-                        <img class='', src="../works/imgs/TTT reconnect/crash_alert.png" alt="">
-                        <p class="caption">Incident Detection</p>
-                    </div>
+                    <img style="max-width: 60vw;", src="../works/imgs/330/infoarch.png" alt="">
                 </div>
                 <br>
                 <div class="text">
-                    <p>And here is our final system architecture: </p>
+                    <p>Our final project proposal has the following parts: </p>
+                    <ul style="font-size: 20px">
+                        <li><b>Value Statement:</b> The initial consultation form redesign's purpose is to make the process of filling out the form less overwhelming, quicker to complete, and and more efficiently collect information that is targeted towards specific user groups' needs.</li>
+                        <li><b>Pain Points:</b> This redesign will make users less likely to give up on completing the form, thus getting them access to mental health services. The new form will have transparent steps and have less stress inducing questions.</li>
+                        <li><b>Design Criteria: </b>
+                            <ul>
+                                <li>Be easy to navigate for first time users.</li>
+                                <li>Gather necessary information for the mental health professionals</li>
+                                <li>Able to be completed in one sitting</li>
+                                <li>Questions are worded in ways that won't confuse or stress users who are trying to use mental health services for the first time. </li>
+                                <li>Less clinical and more interactive</li>
+                            </ul>
+                        </li>
+                        <li><b>Improved Access: </b>
+                            <ul>
+                                <li>People seeking mental health resources for the first time</li>
+                                <li>Stigmatized groups</li>
+                                <li>People who already know what they may need</li>
+                            </ul>
+                        </li>
+                        <li><b>Implications: </b>
+                            <ul>
+                                <li>Increase in consultation requests</li>
+                                <li>CAPS providers more overwhelmed by case load</li>
+                                <li>Connection of various university mental health resources</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
-                <div class="pic-grid">
-                    <div class="image-grid">
-                        <img class='', src="../works/imgs/TTT reconnect/sysarc1.png" alt="">
+                <div class="text">
+                    <p>Then, we identified important touchpoints that their improvement improves the entire user experience. They are: </p>
+                </div>
+                <br>
+                <div class="text" style="text-align: center;">
+                    <img style="max-width: 60vw;", src="../works/imgs/330/touchpts.png" alt="">
+                </div>
+                <div class="text">
+                    <p>After extensive user testing and expert interviews, we also decided to change the sequence of the task flow to ensure the "two flows" ideology - placing mendatory parts in the first half, allowing a faster completion, and adding a chance for reviewing the information before submission: </p>
+                </div>
+                <br>
+                <div class="text" style="text-align: center;">
+                    <img style="max-height: 30vw;", src="../works/imgs/330/sequence.png" alt="">
+                </div>
+                <div class="text">
+                    <p>By adapting these changes, our projected task flow takes at least 10 minutes less than the current form, and a shorter time of completion usually means lower drop-off rates. </p>
+                </div>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../works/imgs/330/25.png" alt="Currrent flow">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../works/imgs/330/26.png" alt="Improved flow">
+                        </div>
                     </div>
-                    <div class="image-grid">
-                        <img class='', src="../works/imgs/TTT reconnect/sysarc2.png" alt="">
-                    </div>
+                    <!-- Navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <!-- Pagination dots -->
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
 
             <div class="section">
                 <br>
-                <p class="header">Part 4: Constructing the Concept of Operations (ConOps)</p>
+                <p class="header">Step 4: Validate</p>
                 <br>
                 <div class="text">
-                    <p>Based on the research we already have, everything including the problem statement, solution statement, and anticipated short term and long term impacts with a cost and benefit estimation and analysis is built up into a 10-page document. </p>
-                    <p><a target="_blank" href="https://transops.s3.amazonaws.com/uploaded_files/2024-07/ConOps-UMich-TTT-2024-Submission_1.pdf" class="link hoverAnimation">Click to view our ConOps</a></p>
-                    <p>Other than leveraging advanced technology in a system, the end goal of our project is to improve the travel experience for pedestrians, cyclists, and other vulnerable road users and eventually improve the willingness to "cross the road" and reconnect once-split neighborhoods and build stronger community connections. </p>
-                    <p><a target="_blank" href="https://www.youtube.com/watch?v=yfhwagU5y9U&list=WL&index=4&t=7s&pp=gAQBiAQB" class="link hoverAnimation">Click to view our team interview video</a></p>
-                    <p>The anticipated benefits of our project are: </p>
-                    <ul style="font-size: 20px">
-                        <li>Safety: 
-                            <ul>
-                                <li>Enhanced road user perceptions</li>
-                                <li>Incident management system improves EMS response</li>
-                            </ul>
-                            <br>
-                        </li>
-                        
-                        <li>Operational: 
-                            <ul>
-                                <li>Automation reduces human oversight</li>
-                                <li>Self-sustaining through continuous data collection</li>
-                                <li>Generalizable to connected vehicles</li>
-                            </ul>
-                            <br>
-                        </li>
-                        
-                        <li>Community: 
-                            <ul>
-                                <li>Improved walkability reconnects neighborhoods</li>
-                                <li>Promotes sustainable transportation</li>
-                            </ul>
-                            <br>
-                        </li>
-                        
-                    </ul>
-                    <p>The anticipated challenges of our project are: </p>
-                    <ul style="font-size: 20px">
-                        <li>Accuracy: 
-                            <ul>
-                                <li>No AI detection method can achieve 100% accuracy</li>
-                                <li>System must be robust against model error</li>
-                            </ul>
-                            <p>To buffer these challenges...</p>
-                            <ul>
-                                <li>Redundant system architecture</li>
-                                <li>Continued advancements in AI</li>
-                            </ul>
-                            <br>
-                        </li>
-                        
-                        <li>Trust: 
-                            <ul>
-                                <li>Camera usage brings privacy concerns</li>
-                                <li>Communities may not immediately embrace new technology</li>
-                            </ul>
-                            <p>To buffer these challenges...</p>
-                            <ul>
-                                <li>Need for community outreach to build public acceptance</li>
-                            </ul>
-                            <br>
-                        </li>
-                        
-                        <li>Cost:  
-                            <ul>
-                                <li>Balancing equipment quality vs cost</li>
-                            </ul>
-                            <p>To buffer these challenges...</p>
-                            <ul>
-                                <li>Low investment for proof-of-concept on a single intersection</li>
-                            </ul>
-                            <br>
-                        </li>
-                    </ul>
+                    <p>From all the preliminary information and research, we developed and finalized the design of an entire flow of prototype for the new form, and to access it, please click the link below: </p>
+                    <p><a target="_blank" href="https://www.figma.com/proto/3OL3EOC0WKUwwhlwXUIP9P/UT330_FinalProject?node-id=1655-1343&t=1n8S43ipvuVmzbrG-1" class="link hoverAnimation"><b>Final Prototype Walkthrough</b></a></p>
+                </div>
+                <div class="text">
+                    <p>Here is the design toolkit: </p>
+                </div>
+                <div class="text" style="text-align: center;">
+                    <img style="max-width: 50vw;", src="../works/imgs/330/designtoolkit.png" alt="">
+                </div><br><br>
+                <div class="text">
+                    <p>Here are the featured improvements of the interface: </p>
+                    <p><b>Progress bar: </b>We added a progress bar after testing out 4 varied versions and selected the most favorite and intuitive one: </p>
+                </div>
+                <div class="text" style="text-align: center;">
+                    <img style="max-width: 60vw;", src="../works/imgs/330/progressbar.png" alt="">
+                </div><br><br>
+                <div class="text">
+                    <p><b>Appointment Scheduling Page: </b>As the current appointment scheduling page is a long list of long text, which is less intuitive, we developed a new set of appointment scheduling interfaces to address the issue: </p>
+                </div>
+                <div class="text" style="text-align: center;">
+                    <img style="max-width: 60vw;", src="../works/imgs/330/appointment.png" alt="">
+                    <p class="caption">Overall Improvements</p>
                 </div>
                 <br>
                 <div class="text" style="text-align: center;">
-                    <img style="max-width: 70vw;", src="../works/imgs/TTT reconnect/vms.png" alt="">
-                    <p class="caption">Variable Message Sign placement and design (physical infrastructure)</p>
+                    <img style="max-width: 65vw;", src="../works/imgs/330/monthly.png" alt="">
+                    <p class="caption">Monthly View Panel Filters</p>
                 </div>
                 <br>
                 <div class="text" style="text-align: center;">
-                    <img style="max-width: 70vw;", src="../works/imgs/TTT reconnect/costbenefit.png" alt="">
-                    <p class="caption">Part of the cost and benefit analysis</p>
+                    <img style="max-width: 65vw;", src="../works/imgs/330/daily.png" alt="">
+                    <p class="caption">Daily View Panel Improvements</p>
                 </div>
-                <br>
+                <br><br>
+                <div class="text">
+                    <p><b>Welcome & Review & Submit Page: </b>We also added a more detailed welcome page and a new review & submit page for users to double check their input. </p>
+                </div>
                 <div class="text" style="text-align: center;">
-                    <img style="max-width: 70vw;", src="../works/imgs/TTT reconnect/bcr.png" alt="">
-                    <p class="caption">Our Benefit and Cost Ratio</p>
+                    <img style="max-width: 60vw;", src="../works/imgs/330/reviewandsubmit.png" alt="">
+                    <p class="caption">Review and Submit Pages</p>
+                </div>
+                <br><br>
+                <div class="text">
+                    <p><b>Other improvements and Additions: </b>We also added a more detailed welcome page and a new review & submit page for users to double check their input. </p>
+                </div>
+                <div class="text" style="text-align: center;">
+                    <img style="max-width: 60vw;", src="../works/imgs/330/other.png" alt="">
+                    <p class="caption">Other additions</p>
                 </div>
             </div>
             
@@ -321,5 +311,19 @@
     </main>
 
     <script src="js/swipe2drag.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: true, // Infinite looping
+        });
+    </script>
 
 </body>

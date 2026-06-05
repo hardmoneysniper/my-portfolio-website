@@ -204,7 +204,7 @@ header ul a {
 /* Vertical text label */
 .label-vertical {
     writing-mode: vertical-rl;
-    transform: rotate(180deg);
+    transform: rotate(180deg) scale(1);
     color: rgba(255, 255, 255, 0.85);
     font-size: var(--fs-label);
     font-weight: 300;
@@ -212,6 +212,7 @@ header ul a {
     text-transform: uppercase;
     white-space: nowrap;
     user-select: none;
+    transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease;
 }
 
 /* Flat < or > icon — NOT in writing-mode so it renders as a normal angle bracket */
@@ -221,6 +222,22 @@ header ul a {
     font-weight: 200;
     line-height: 1;
     flex-shrink: 0;
+    transform: scale(1);
+    transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.panel-bar:hover .bar-icon,
+.panel-bar:hover .label-vertical {
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 0 14px rgba(255, 255, 255, 0.75);
+}
+
+.panel-bar:hover .label-vertical {
+    transform: rotate(180deg) scale(1.15);
+}
+
+.panel-bar:hover .bar-icon {
+    transform: scale(1.25);
 }
 
 /* Description content — hidden until expanded, stays right of panel-bar */

@@ -7,16 +7,20 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../images/icon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="../js/loader.js"></script>
+    <script src="../js/transitions.js"></script>
 </head>
 
 <body>
     <header class="sidebar">
+        <a class="site-title" href="../index.html">Rongyu Shen</a>
         <nav class="pageNav">
             <ul>
                 <li><a class="hoverAnimation" href="../index.html">Home</a></li>
                 <li><a class="hoverAnimation" href="../projects.html">Projects</a></li>
-                <li><a class="hoverAnimation" href="../about.html">About</a></li>
-                <li><a class="hoverAnimation" href="https://drive.google.com/file/d/1nX5mGY-q166AyBNyX9kv7kVUX0ZFmfvc/view?usp=sharing">Resume</a></li>
+                <li><a class="hoverAnimation" href="../about.html">About Me</a></li>
+                <li><a class="hoverAnimation" href="https://drive.google.com/file/d/18148QExqdTG8SH_yBh63lANbMm12UwnP/view?usp=sharing">CV</a></li>
+                <li><a class="hoverAnimation" href="https://drive.google.com/file/d/1RuMzd0oeqMd5iTHmMuHWrvR4REzY45tw/view?usp=sharing">Portfolio</a></li>
             </ul>    
         </nav>
     </header>
@@ -57,8 +61,8 @@
                 <br>
                 <p class="header">Step 1: Creating the HMW Question</p>
                 <br>
-                <div style="display: flex; flex-direction: row;">
-                    <div class="text">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+                    <div class="text" style="flex: 1; min-width: 280px;">
                         <p>At the very start of the project, we studied a few example databases and tried to generate HMW questions based on our observation and findings of the data. After these observations, we chose an area of focus as a help to guide our approach. Our group eventually decided that mobility is our focus.</p>
                         <p><b>Final HMW question:</b> How might we be able to visualize how New Yorkers move around NYC?</p>
                         <p>Based on this question, we developed further research questions upon the context of our project:</p>
@@ -68,7 +72,7 @@
                         </ol>
                         <p>Our goal was to create a tool that is easy to use and informative about the urban space to the users. </p>
                     </div>
-                    <div class="image-small">
+                    <div class="image-small" style="flex-shrink: 0;">
                         <img src="../works/imgs/NYC Taxi/HMW_Urban_Tech_and_Mobility.jpg" alt="">
                     </div>
                 </div>
@@ -147,13 +151,13 @@
             <div class="section">
                 <p class="header">Step 3: Choosing The Visual Structure</p>
                 <br>
-                <div style="display: flex; flex-direction: row;">
-                    <div class="text"> 
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 24px; align-items: flex-start;">
+                    <div class="text" style="flex: 1; min-width: 280px;">
                         <p>During the ideation process, one of the challenges we encountered was deciding how to best visualize the data. Our goal was to create a map that was easy to interpret at a glance, revealing patterns on the surface while also allowing for more detailed exploration through user interaction.</p>
                         <p>We went through several iterations in pursuit of this goal. Using the Crazy 8 method, we prototyped various visualizations, including node networks, bar charts, 3D pillars, and bubble circles. However, we found that these approaches were either too complex for quickly identifying trends or too simplistic to support deeper analysis through interactions.</p>
                         <p>Ultimately, we settled on a Choropleth map for our final design. Since our data was location-based, and we were focused on tracking the movement of people across NYC, the Choropleth map offered the best solution. It provided a clear surface-level view of the data while allowing us to seamlessly integrate more interactive elements for further exploration.</p>
                     </div>
-                    <div class="image-small">
+                    <div class="image-small" style="flex-shrink: 0;">
                         <img src="../works/imgs/NYC Taxi/IMG_4215.jpg" alt="">
                     </div>
                 </div>
@@ -187,7 +191,7 @@
                     </ul>
                 </div>
                 
-                <div style="display: flex; flex-direction: row; place-content: center;">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 20px;">
                     <div class="image-small">
                         <img src="../works/imgs/NYC Taxi/tooltip.png" alt="">
                     </div>

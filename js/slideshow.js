@@ -1,20 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slide');
-    const detailsButton = document.querySelector('.details-button');
-    const descriptionBox = document.querySelector('.image-description');
+    const lmTitle = document.querySelector('.lm-title');
+    const lmInfo = document.querySelector('.lm-info');
+    const lmDescription = document.querySelector('.lm-description');
+    const lmLink = document.querySelector('.lm-link');
+    const panel = document.querySelector('.learn-more-panel');
+    const panelBar = document.querySelector('.panel-bar');
+
     let currentIndex = 0;
     let slideInterval = null;
-    const intervalTime = 3500; // 5 seconds per slide
+    let resumeTimeout = null;
+    let isExpanded = false;
+    const intervalTime = 2750;
 
     function showSlide(index) {
         slides.forEach(s => s.classList.remove('active'));
         slides[index].classList.add('active');
-
-        // Update details description and link
-        const desc = slides[index].getAttribute('data-description') || '';
-        const link = slides[index].getAttribute('data-link') || '#';
-        descriptionBox.textContent = desc;
-        detailsButton.setAttribute('href', link);
+        if (lmTitle) lmTitle.textContent = slides[index].dataset.title || '';
+        if (lmInfo) lmInfo.textContent = slides[index].dataset.info || '';
+        if (lmDescription) lmDescription.textContent = slides[index].dataset.description || '';
+        if (lmLink) lmLink.href = slides[index].dataset.link || '#';
     }
 
     function nextSlide() {
@@ -23,38 +28,69 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startSlideshow() {
-        if (!slideInterval) {
-            slideInterval = setInterval(nextSlide, intervalTime);
-        }
+        if (!slideInterval) slideInterval = setInterval(nextSlide, intervalTime);
     }
 
     function stopSlideshow() {
+        if (resumeTimeout) {
+            clearTimeout(resumeTimeout);
+            resumeTimeout = null;
+        }
         if (slideInterval) {
             clearInterval(slideInterval);
             slideInterval = null;
         }
     }
 
-    // Hover events to show overlay and stop slideshow
-    detailsButton.addEventListener('mouseenter', () => {
-        document.body.classList.add('hovering-details');
-        stopSlideshow();
-        detailsButton.textContent = "Go to This Project"; // Change text on hover
-    });
+    showSlide(0);
 
-    detailsButton.addEventListener('mouseleave', () => {
-        document.body.classList.remove('hovering-details');
-        startSlideshow();
-        detailsButton.textContent = "About This Project"; // Revert to original text
-    });
+    // Start rotation only after the loader overlay is fully removed from the DOM
+    function startAfterLoader() {
+        const loader = document.getElementById('loader');
+        if (!loader) {
+            startSlideshow();
+            return;
+        }
+        const observer = new MutationObserver(() => {
+            if (!document.getElementById('loader')) {
+                observer.disconnect();
+                startSlideshow();
+            }
+        });
+        observer.observe(document.body, { childList: true });
+    }
+    startAfterLoader();
 
-    // Initial setup
-    showSlide(currentIndex);
-    startSlideshow();
+    if (panel) {
+        // Hovering the panel pauses rotation and makes image fully visible
+        panel.addEventListener('mouseenter', () => {
+            document.body.classList.add('hovering-panel');
+            stopSlideshow();
+        });
+
+        // Leaving the panel: advance to next slide after 1s, then resume normal cadence
+        panel.addEventListener('mouseleave', () => {
+            document.body.classList.remove('hovering-panel');
+            resumeTimeout = setTimeout(() => {
+                resumeTimeout = null;
+                nextSlide();
+                startSlideshow();
+            }, 1000);
+        });
+    }
+
+    if (panelBar) {
+        panelBar.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (!isExpanded) {
+                isExpanded = true;
+                panel.classList.add('expanded');
+            } else {
+                isExpanded = false;
+                panel.classList.remove('expanded');
+                // Don't touch hovering-panel or slideshow here —
+                // cursor is still over the panel, so mouseleave will handle cleanup
+            }
+        });
+    }
 });
-
-const desc = slides[index].getAttribute('data-description') || '';
-descriptionBox.textContent = desc;
-
-const detailsButton = document.querySelector('.details-button');
-let originalText = detailsButton.textContent; // store original text

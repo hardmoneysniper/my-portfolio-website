@@ -16,7 +16,7 @@
 
     /* 4-level type scale — lighter weight for larger text */
     --fs-display: 72px;
-    --fs-heading: 25px;
+    --fs-heading: 28px;
     --fs-body: 18px;
     --fs-label: 15px;
 
@@ -294,18 +294,24 @@ header ul a {
     text-transform: uppercase;
     letter-spacing: 0.12em;
     font-weight: var(--fw-body);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    padding-bottom: 3px;
     text-decoration: none;
-    transition: border-color 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 10px 22px;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .lm-link:hover {
-    border-color: rgba(255, 255, 255, 0.9);
+    background-color: #ffffff;
+    color: var(--main_color);
+    border-color: #ffffff;
 }
 
 body.hovering-panel .slide.active {
     opacity: 1;
+}
+
+li {
+    line-height: 1.5;
 }
 
 /* Navigation underline animation */
@@ -601,6 +607,14 @@ body.hovering-panel .slide.active {
     color: var(--main_color);
     padding-top: 5px;
     text-align: center;
+}
+
+.subheader {
+    font-size: var(--fs-body);
+    font-weight: 500;
+    color: var(--main_color);
+    line-height: 1.65;
+    padding: 10px 0;
 }
 
 .quote {

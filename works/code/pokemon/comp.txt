@@ -1,0 +1,49 @@
+void primMST() {
+        vector<VertexInfo> vertexInfo(n);
+
+        vertexInfo[0].d = 0.0;
+
+        double totalWeight = 0.0;
+        vector<Edge> mstEdges;
+
+        for (int count = 0; count < n; ++count) {
+            int u = 1;
+            double minDist = numeric_limits<double>::infinity();
+            
+            for (int i = 0; i < n; ++i) {
+                if (!vertexInfo[i].k && vertexInfo[i].d < minDist) {
+                    minDist = vertexInfo[i].d;
+                    u = i;
+                }
+            }
+
+            if (u == -1) {
+                cerr << "Cannot construct MST\n";
+                exit(1);
+            }
+
+            vertexInfo[u].k = true;
+            totalWeight += sqrt(minDist);
+
+            if (vertexInfo[u].p != -1) {
+                mstEdges.emplace_back(vertexInfo[u].p, u, minDist);
+            }
+
+            for (int v = 0; v < n; ++v) {
+                if (!vertexInfo[v].k) {
+                    double weight = distanceCalculator(locations[u], locations[v]);
+                    if (weight < vertexInfo[v].d) {
+                        vertexInfo[v].d = weight;
+                        vertexInfo[v].p = u;
+                    }
+                }
+            }
+        }
+
+        if (static_cast<int>(mstEdges.size()) != n - 1) {
+            cerr << "Cannot construct MST\n";
+            exit(1);
+        }
+
+        printMST(totalWeight, mstEdges);
+    }

@@ -1,0 +1,464 @@
+./euchre.exe pack.in shuffle 10 Alice Simple Bob Simple Cathy Simple Drew Simple 
+Hand 0
+Alice deals
+Nine of Hearts turned up
+Bob orders up Hearts
+
+King of Clubs led by Bob
+Ace of Clubs played by Cathy
+Ten of Clubs played by Drew
+Jack of Clubs played by Alice
+Cathy takes the trick
+
+King of Spades led by Cathy
+Ten of Spades played by Drew
+Ace of Spades played by Alice
+Queen of Spades played by Bob
+Alice takes the trick
+
+King of Diamonds led by Alice
+Nine of Spades played by Bob
+Nine of Clubs played by Cathy
+Queen of Diamonds played by Drew
+Alice takes the trick
+
+Jack of Spades led by Alice
+Ace of Hearts played by Bob
+Queen of Hearts played by Cathy
+Nine of Diamonds played by Drew
+Bob takes the trick
+
+Jack of Hearts led by Bob
+Jack of Diamonds played by Cathy
+King of Hearts played by Drew
+Nine of Hearts played by Alice
+Bob takes the trick
+
+Alice and Cathy win the hand
+euchred!
+Alice and Cathy have 2 points
+Bob and Drew have 0 points
+
+Hand 1
+Bob deals
+Nine of Diamonds turned up
+Cathy passes
+Drew passes
+Alice orders up Diamonds
+
+Ace of Clubs led by Cathy
+Nine of Hearts played by Drew
+Nine of Clubs played by Alice
+Queen of Clubs played by Bob
+Cathy takes the trick
+
+King of Clubs led by Cathy
+Queen of Hearts played by Drew
+Ace of Hearts played by Alice
+Jack of Clubs played by Bob
+Cathy takes the trick
+
+Queen of Spades led by Cathy
+Ace of Spades played by Drew
+King of Diamonds played by Alice
+King of Spades played by Bob
+Alice takes the trick
+
+Jack of Hearts led by Alice
+Nine of Diamonds played by Bob
+Ten of Clubs played by Cathy
+Jack of Diamonds played by Drew
+Drew takes the trick
+
+Ten of Diamonds led by Drew
+Ace of Diamonds played by Alice
+Ten of Spades played by Bob
+Jack of Spades played by Cathy
+Alice takes the trick
+
+Alice and Cathy win the hand
+Alice and Cathy have 3 points
+Bob and Drew have 0 points
+
+Hand 2
+Cathy deals
+King of Diamonds turned up
+Drew passes
+Alice passes
+Bob passes
+Cathy orders up Diamonds
+
+Ace of Clubs led by Drew
+Jack of Clubs played by Alice
+Queen of Clubs played by Bob
+King of Clubs played by Cathy
+Drew takes the trick
+
+Ace of Spades led by Drew
+Ten of Spades played by Alice
+Queen of Spades played by Bob
+King of Spades played by Cathy
+Drew takes the trick
+
+Ten of Clubs led by Drew
+Nine of Hearts played by Alice
+Ten of Hearts played by Bob
+Queen of Diamonds played by Cathy
+Cathy takes the trick
+
+Jack of Hearts led by Cathy
+Nine of Spades played by Drew
+Ten of Diamonds played by Alice
+Jack of Diamonds played by Bob
+Bob takes the trick
+
+Jack of Spades led by Bob
+King of Diamonds played by Cathy
+Nine of Clubs played by Drew
+Nine of Diamonds played by Alice
+Cathy takes the trick
+
+Bob and Drew win the hand
+euchred!
+Alice and Cathy have 3 points
+Bob and Drew have 2 points
+
+Hand 3
+Drew deals
+Queen of Clubs turned up
+Alice passes
+Bob passes
+Cathy passes
+Drew passes
+Alice orders up Spades
+
+King of Clubs led by Alice
+Nine of Diamonds played by Bob
+Ace of Clubs played by Cathy
+Ten of Clubs played by Drew
+Cathy takes the trick
+
+King of Hearts led by Cathy
+Queen of Hearts played by Drew
+Nine of Clubs played by Alice
+Jack of Hearts played by Bob
+Cathy takes the trick
+
+Queen of Diamonds led by Cathy
+Ace of Diamonds played by Drew
+Jack of Diamonds played by Alice
+King of Diamonds played by Bob
+Drew takes the trick
+
+Ten of Diamonds led by Drew
+Ten of Spades played by Alice
+King of Spades played by Bob
+Nine of Hearts played by Cathy
+Bob takes the trick
+
+Jack of Clubs led by Bob
+Nine of Spades played by Cathy
+Jack of Spades played by Drew
+Ace of Spades played by Alice
+Drew takes the trick
+
+Bob and Drew win the hand
+euchred!
+Alice and Cathy have 3 points
+Bob and Drew have 4 points
+
+Hand 4
+Alice deals
+Queen of Diamonds turned up
+Bob orders up Diamonds
+
+Ten of Clubs led by Bob
+Queen of Clubs played by Cathy
+King of Clubs played by Drew
+Jack of Clubs played by Alice
+Drew takes the trick
+
+Ace of Hearts led by Drew
+Ten of Hearts played by Alice
+Nine of Hearts played by Bob
+Queen of Hearts played by Cathy
+Drew takes the trick
+
+Ace of Spades led by Drew
+Nine of Clubs played by Alice
+Ten of Spades played by Bob
+King of Spades played by Cathy
+Drew takes the trick
+
+Ace of Diamonds led by Drew
+Queen of Diamonds played by Alice
+Jack of Diamonds played by Bob
+King of Diamonds played by Cathy
+Bob takes the trick
+
+Jack of Hearts led by Bob
+Jack of Spades played by Cathy
+Nine of Diamonds played by Drew
+Ten of Diamonds played by Alice
+Bob takes the trick
+
+Bob and Drew win the hand
+march!
+Alice and Cathy have 3 points
+Bob and Drew have 6 points
+
+Hand 5
+Bob deals
+Ace of Diamonds turned up
+Cathy passes
+Drew passes
+Alice passes
+Bob passes
+Cathy orders up Hearts
+
+Jack of Spades led by Cathy
+Nine of Spades played by Drew
+Queen of Spades played by Alice
+King of Spades played by Bob
+Bob takes the trick
+
+King of Clubs led by Bob
+Nine of Clubs played by Cathy
+Queen of Clubs played by Drew
+Ten of Clubs played by Alice
+Bob takes the trick
+
+Jack of Clubs led by Bob
+Nine of Diamonds played by Cathy
+Ten of Diamonds played by Drew
+Ten of Spades played by Alice
+Bob takes the trick
+
+Jack of Diamonds led by Bob
+Jack of Hearts played by Cathy
+Queen of Hearts played by Drew
+Ten of Hearts played by Alice
+Cathy takes the trick
+
+Nine of Hearts led by Cathy
+Queen of Diamonds played by Drew
+King of Diamonds played by Alice
+King of Hearts played by Bob
+Bob takes the trick
+
+Bob and Drew win the hand
+euchred!
+Alice and Cathy have 3 points
+Bob and Drew have 8 points
+
+Hand 6
+Cathy deals
+Ten of Hearts turned up
+Drew passes
+Alice passes
+Bob orders up Hearts
+
+King of Diamonds led by Drew
+Ace of Diamonds played by Alice
+Nine of Clubs played by Bob
+King of Spades played by Cathy
+Alice takes the trick
+
+King of Clubs led by Alice
+Ace of Clubs played by Bob
+Nine of Hearts played by Cathy
+Nine of Spades played by Drew
+Cathy takes the trick
+
+Ace of Hearts led by Cathy
+Jack of Diamonds played by Drew
+Ten of Diamonds played by Alice
+Jack of Hearts played by Bob
+Bob takes the trick
+
+Queen of Clubs led by Bob
+Ten of Hearts played by Cathy
+Nine of Diamonds played by Drew
+Jack of Clubs played by Alice
+Cathy takes the trick
+
+Queen of Hearts led by Cathy
+Jack of Spades played by Drew
+Queen of Diamonds played by Alice
+King of Hearts played by Bob
+Bob takes the trick
+
+Alice and Cathy win the hand
+euchred!
+Alice and Cathy have 5 points
+Bob and Drew have 8 points
+
+Hand 7
+Drew deals
+King of Hearts turned up
+Alice passes
+Bob passes
+Cathy orders up Hearts
+
+King of Diamonds led by Alice
+Ace of Diamonds played by Bob
+Queen of Diamonds played by Cathy
+Ten of Diamonds played by Drew
+Bob takes the trick
+
+King of Spades led by Bob
+Ace of Spades played by Cathy
+Queen of Spades played by Drew
+Nine of Spades played by Alice
+Cathy takes the trick
+
+Jack of Spades led by Cathy
+Nine of Diamonds played by Drew
+Queen of Clubs played by Alice
+Ten of Clubs played by Bob
+Cathy takes the trick
+
+Jack of Diamonds led by Cathy
+King of Hearts played by Drew
+Nine of Hearts played by Alice
+Ten of Hearts played by Bob
+Cathy takes the trick
+
+Ace of Hearts led by Cathy
+Queen of Hearts played by Drew
+King of Clubs played by Alice
+Jack of Clubs played by Bob
+Cathy takes the trick
+
+Alice and Cathy win the hand
+Alice and Cathy have 6 points
+Bob and Drew have 8 points
+
+Hand 8
+Alice deals
+Ace of Hearts turned up
+Bob passes
+Cathy orders up Hearts
+
+King of Clubs led by Bob
+Nine of Clubs played by Cathy
+Nine of Spades played by Drew
+Ace of Clubs played by Alice
+Alice takes the trick
+
+King of Diamonds led by Alice
+Queen of Diamonds played by Bob
+King of Spades played by Cathy
+Ace of Diamonds played by Drew
+Drew takes the trick
+
+Queen of Spades led by Drew
+Jack of Clubs played by Alice
+Nine of Diamonds played by Bob
+Ten of Hearts played by Cathy
+Cathy takes the trick
+
+King of Hearts led by Cathy
+Nine of Hearts played by Drew
+Jack of Diamonds played by Alice
+Ten of Clubs played by Bob
+Alice takes the trick
+
+Ace of Hearts led by Alice
+Queen of Clubs played by Bob
+Queen of Hearts played by Cathy
+Ten of Spades played by Drew
+Alice takes the trick
+
+Alice and Cathy win the hand
+Alice and Cathy have 7 points
+Bob and Drew have 8 points
+
+Hand 9
+Bob deals
+Queen of Spades turned up
+Cathy passes
+Drew passes
+Alice passes
+Bob orders up Spades
+
+Ace of Diamonds led by Cathy
+Jack of Diamonds played by Drew
+Nine of Diamonds played by Alice
+Queen of Clubs played by Bob
+Cathy takes the trick
+
+King of Diamonds led by Cathy
+Ten of Diamonds played by Drew
+Ten of Hearts played by Alice
+Queen of Spades played by Bob
+Bob takes the trick
+
+Jack of Clubs led by Bob
+Nine of Clubs played by Cathy
+Queen of Hearts played by Drew
+Jack of Hearts played by Alice
+Bob takes the trick
+
+Ace of Spades led by Bob
+Ten of Clubs played by Cathy
+King of Hearts played by Drew
+King of Clubs played by Alice
+Bob takes the trick
+
+King of Spades led by Bob
+Queen of Diamonds played by Cathy
+Ace of Hearts played by Drew
+Ace of Clubs played by Alice
+Bob takes the trick
+
+Bob and Drew win the hand
+Alice and Cathy have 7 points
+Bob and Drew have 9 points
+
+Hand 10
+Cathy deals
+Ace of Clubs turned up
+Drew passes
+Alice passes
+Bob passes
+Cathy passes
+Drew passes
+Alice orders up Spades
+
+Ace of Diamonds led by Drew
+Ten of Diamonds played by Alice
+King of Diamonds played by Bob
+Queen of Diamonds played by Cathy
+Drew takes the trick
+
+Queen of Clubs led by Drew
+Nine of Hearts played by Alice
+Ten of Clubs played by Bob
+Nine of Diamonds played by Cathy
+Drew takes the trick
+
+Jack of Diamonds led by Drew
+Ace of Hearts played by Alice
+King of Hearts played by Bob
+Queen of Hearts played by Cathy
+Drew takes the trick
+
+Ten of Hearts led by Drew
+Queen of Spades played by Alice
+Ace of Spades played by Bob
+Ten of Spades played by Cathy
+Bob takes the trick
+
+Jack of Spades led by Bob
+King of Spades played by Cathy
+Nine of Clubs played by Drew
+Jack of Clubs played by Alice
+Bob takes the trick
+
+Bob and Drew win the hand
+euchred!
+Alice and Cathy have 7 points
+Bob and Drew have 11 points
+
+Bob and Drew win!

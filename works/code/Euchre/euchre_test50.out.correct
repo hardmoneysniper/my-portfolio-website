@@ -1,0 +1,156 @@
+./euchre.exe pack.in noshuffle 1 Alice Human Bob Human Cathy Human Drew Human 
+Hand 0
+Alice deals
+Jack of Diamonds turned up
+Human player Bob's hand: [0] Nine of Spades
+Human player Bob's hand: [1] Ten of Spades
+Human player Bob's hand: [2] Jack of Spades
+Human player Bob's hand: [3] King of Hearts
+Human player Bob's hand: [4] Ace of Hearts
+Human player Bob, please enter a suit, or "pass":
+Bob passes
+Human player Cathy's hand: [0] Nine of Clubs
+Human player Cathy's hand: [1] Ten of Clubs
+Human player Cathy's hand: [2] Jack of Clubs
+Human player Cathy's hand: [3] Queen of Spades
+Human player Cathy's hand: [4] King of Spades
+Human player Cathy, please enter a suit, or "pass":
+Cathy passes
+Human player Drew's hand: [0] Nine of Hearts
+Human player Drew's hand: [1] Ten of Hearts
+Human player Drew's hand: [2] Queen of Clubs
+Human player Drew's hand: [3] King of Clubs
+Human player Drew's hand: [4] Ace of Spades
+Human player Drew, please enter a suit, or "pass":
+Drew passes
+Human player Alice's hand: [0] Nine of Diamonds
+Human player Alice's hand: [1] Ten of Diamonds
+Human player Alice's hand: [2] Jack of Hearts
+Human player Alice's hand: [3] Queen of Hearts
+Human player Alice's hand: [4] Ace of Clubs
+Human player Alice, please enter a suit, or "pass":
+Alice passes
+Human player Bob's hand: [0] Nine of Spades
+Human player Bob's hand: [1] Ten of Spades
+Human player Bob's hand: [2] Jack of Spades
+Human player Bob's hand: [3] King of Hearts
+Human player Bob's hand: [4] Ace of Hearts
+Human player Bob, please enter a suit, or "pass":
+Bob orders up Hearts
+
+Human player Bob's hand: [0] Nine of Spades
+Human player Bob's hand: [1] Ten of Spades
+Human player Bob's hand: [2] Jack of Spades
+Human player Bob's hand: [3] King of Hearts
+Human player Bob's hand: [4] Ace of Hearts
+Human player Bob, please select a card:
+Jack of Spades led by Bob
+Human player Cathy's hand: [0] Nine of Clubs
+Human player Cathy's hand: [1] Ten of Clubs
+Human player Cathy's hand: [2] Jack of Clubs
+Human player Cathy's hand: [3] Queen of Spades
+Human player Cathy's hand: [4] King of Spades
+Human player Cathy, please select a card:
+King of Spades played by Cathy
+Human player Drew's hand: [0] Nine of Hearts
+Human player Drew's hand: [1] Ten of Hearts
+Human player Drew's hand: [2] Queen of Clubs
+Human player Drew's hand: [3] King of Clubs
+Human player Drew's hand: [4] Ace of Spades
+Human player Drew, please select a card:
+Ace of Spades played by Drew
+Human player Alice's hand: [0] Nine of Diamonds
+Human player Alice's hand: [1] Ten of Diamonds
+Human player Alice's hand: [2] Jack of Hearts
+Human player Alice's hand: [3] Queen of Hearts
+Human player Alice's hand: [4] Ace of Clubs
+Human player Alice, please select a card:
+Nine of Diamonds played by Alice
+Drew takes the trick
+
+Human player Drew's hand: [0] Nine of Hearts
+Human player Drew's hand: [1] Ten of Hearts
+Human player Drew's hand: [2] Queen of Clubs
+Human player Drew's hand: [3] King of Clubs
+Human player Drew, please select a card:
+King of Clubs led by Drew
+Human player Alice's hand: [0] Ten of Diamonds
+Human player Alice's hand: [1] Jack of Hearts
+Human player Alice's hand: [2] Queen of Hearts
+Human player Alice's hand: [3] Ace of Clubs
+Human player Alice, please select a card:
+Ace of Clubs played by Alice
+Human player Bob's hand: [0] Nine of Spades
+Human player Bob's hand: [1] Ten of Spades
+Human player Bob's hand: [2] King of Hearts
+Human player Bob's hand: [3] Ace of Hearts
+Human player Bob, please select a card:
+Nine of Spades played by Bob
+Human player Cathy's hand: [0] Nine of Clubs
+Human player Cathy's hand: [1] Ten of Clubs
+Human player Cathy's hand: [2] Jack of Clubs
+Human player Cathy's hand: [3] Queen of Spades
+Human player Cathy, please select a card:
+Jack of Clubs played by Cathy
+Alice takes the trick
+
+Human player Alice's hand: [0] Ten of Diamonds
+Human player Alice's hand: [1] Jack of Hearts
+Human player Alice's hand: [2] Queen of Hearts
+Human player Alice, please select a card:
+Ten of Diamonds led by Alice
+Human player Bob's hand: [0] Ten of Spades
+Human player Bob's hand: [1] King of Hearts
+Human player Bob's hand: [2] Ace of Hearts
+Human player Bob, please select a card:
+Ten of Spades played by Bob
+Human player Cathy's hand: [0] Nine of Clubs
+Human player Cathy's hand: [1] Ten of Clubs
+Human player Cathy's hand: [2] Queen of Spades
+Human player Cathy, please select a card:
+Nine of Clubs played by Cathy
+Human player Drew's hand: [0] Nine of Hearts
+Human player Drew's hand: [1] Ten of Hearts
+Human player Drew's hand: [2] Queen of Clubs
+Human player Drew, please select a card:
+Queen of Clubs played by Drew
+Alice takes the trick
+
+Human player Alice's hand: [0] Jack of Hearts
+Human player Alice's hand: [1] Queen of Hearts
+Human player Alice, please select a card:
+Jack of Hearts led by Alice
+Human player Bob's hand: [0] King of Hearts
+Human player Bob's hand: [1] Ace of Hearts
+Human player Bob, please select a card:
+Ace of Hearts played by Bob
+Human player Cathy's hand: [0] Ten of Clubs
+Human player Cathy's hand: [1] Queen of Spades
+Human player Cathy, please select a card:
+Ten of Clubs played by Cathy
+Human player Drew's hand: [0] Nine of Hearts
+Human player Drew's hand: [1] Ten of Hearts
+Human player Drew, please select a card:
+Ten of Hearts played by Drew
+Alice takes the trick
+
+Human player Alice's hand: [0] Queen of Hearts
+Human player Alice, please select a card:
+Queen of Hearts led by Alice
+Human player Bob's hand: [0] King of Hearts
+Human player Bob, please select a card:
+King of Hearts played by Bob
+Human player Cathy's hand: [0] Queen of Spades
+Human player Cathy, please select a card:
+Queen of Spades played by Cathy
+Human player Drew's hand: [0] Nine of Hearts
+Human player Drew, please select a card:
+Nine of Hearts played by Drew
+Bob takes the trick
+
+Alice and Cathy win the hand
+euchred!
+Alice and Cathy have 2 points
+Bob and Drew have 0 points
+
+Alice and Cathy win!

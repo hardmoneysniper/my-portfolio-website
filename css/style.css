@@ -211,6 +211,7 @@ header ul a {
     letter-spacing: 0.25em;
     text-transform: uppercase;
     white-space: nowrap;
+    -webkit-user-select: none;
     user-select: none;
     transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease;
 }

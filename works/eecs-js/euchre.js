@@ -363,13 +363,15 @@
 
         renderScores();
 
-        if (G.upcard) {
+        if (G.upcard && G.trump === G.upSuit) {
             log(`${NAMES[G.dealer]} picks up the upcard.`);
             if (G.dealer === 0) {
                 G.hands[0].push({ ...G.upcard });
+                G.pendingType = 'discard';
                 showDiscard();
                 renderHands();
-                await waitFor('discard');
+                const discardIdx = await waitFor('discard');
+                G.hands[0].splice(discardIdx, 1);
                 log('You discarded a card.');
             } else {
                 aiAddAndDiscard(G.hands[G.dealer], G.upcard, G.trump);

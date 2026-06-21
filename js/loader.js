@@ -81,10 +81,10 @@
         const dismiss = () => {
             clearInterval(cycle);
             // Enable transition only for fade-out (no fade-in)
-            loader.style.transition = 'opacity 0.35s ease';
+            loader.style.transition = 'opacity 0.15s ease';
             void loader.offsetHeight;
             loader.classList.add('fade-out');
-            setTimeout(() => loader.remove(), 400);
+            setTimeout(() => loader.remove(), 150);
         };
 
         window.addEventListener('load', () => {

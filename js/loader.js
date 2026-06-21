@@ -15,15 +15,15 @@
     const startTime = Date.now();
     const INTERVAL = 300;
 
-    // Entry load (no same-origin referrer): 1.5–2s. Internal navigation: 0.5–1s.
+    // Entry load (no same-origin referrer): 800–1200 ms. Internal navigation: 300–600 ms.
     function getMin() {
         try {
             if (document.referrer &&
                 new URL(document.referrer).origin === window.location.origin) {
-                return Math.random() * 500 + 500;   // 500–1000 ms
+                return Math.random() * 300 + 300;   // 300–600 ms
             }
         } catch (_) {}
-        return Math.random() * 500 + 1500;          // 1500–2000 ms
+        return Math.random() * 400 + 800;           // 800–1200 ms
     }
     const MIN = getMin();
 
@@ -81,10 +81,10 @@
         const dismiss = () => {
             clearInterval(cycle);
             // Enable transition only for fade-out (no fade-in)
-            loader.style.transition = 'opacity 0.5s ease';
+            loader.style.transition = 'opacity 0.35s ease';
             void loader.offsetHeight;
             loader.classList.add('fade-out');
-            setTimeout(() => loader.remove(), 550);
+            setTimeout(() => loader.remove(), 400);
         };
 
         window.addEventListener('load', () => {

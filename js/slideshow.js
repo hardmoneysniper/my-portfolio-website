@@ -11,19 +11,66 @@ document.addEventListener('DOMContentLoaded', () => {
     let slideInterval = null;
     let resumeTimeout = null;
     let isExpanded = false;
-    const intervalTime = 2750;
+    const intervalTime = 3000;
 
     function showSlide(index) {
-        slides.forEach(s => s.classList.remove('active'));
-        slides[index].classList.add('active');
-        if (lmTitle) lmTitle.textContent = slides[index].dataset.title || '';
-        if (lmInfo) lmInfo.textContent = slides[index].dataset.info || '';
-        if (lmDescription) lmDescription.textContent = slides[index].dataset.description || '';
-        if (lmLink) lmLink.href = slides[index].dataset.link || '#';
+        // Pause any video in slides becoming inactive
+        slides.forEach(s => {
+            s.classList.remove('active');
+            const v = s.querySelector('video');
+            if (v) v.pause();
+        });
+
+        const slide = slides[index];
+
+        // lazy create on first visit
+        if (slide.dataset.video) {
+            let vid = slide.querySelector('video');
+            if (!vid) {
+                vid = document.createElement('video');
+                vid.loop = true;
+                vid.muted = true;
+                // Override global video rule (max-width:80%; margin:100px auto 0)
+                vid.style.cssText = [
+                    'position:absolute', 'top:0', 'left:0',
+                    'width:100%', 'height:100%',
+                    'max-width:none', 'margin:0',
+                    'object-fit:cover'
+                ].join(';');
+                const src = document.createElement('source');
+                src.src = slide.dataset.video;
+                src.type = 'video/mp4';
+                vid.appendChild(src);
+                slide.appendChild(vid);
+            }
+            vid.play();
+        }
+
+        if (!slide.style.backgroundImage && slide.dataset.bg) {
+            slide.style.backgroundImage = `url('${slide.dataset.bg}')`;
+        }
+
+        slide.classList.add('active');
+        if (lmTitle) lmTitle.textContent = slide.dataset.title || '';
+        if (lmInfo) lmInfo.textContent = slide.dataset.info || '';
+        if (lmDescription) lmDescription.textContent = slide.dataset.description || '';
+        if (lmLink) lmLink.href = slide.dataset.link || '#';
+
+        // Mobile: retrigger pop-out hint on each new slide
+        if (panel && !isExpanded && window.matchMedia('(max-width: 499px)').matches) {
+            panel.classList.remove('panel-hint');
+            void panel.offsetWidth; // force reflow to restart animation
+            panel.classList.add('panel-hint');
+        }
     }
 
     function nextSlide() {
         currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         showSlide(currentIndex);
     }
 
@@ -62,13 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
     startAfterLoader();
 
     if (panel) {
-        // Hovering the panel pauses rotation and makes image fully visible
         panel.addEventListener('mouseenter', () => {
             document.body.classList.add('hovering-panel');
             stopSlideshow();
         });
 
-        // Leaving the panel: advance to next slide after 1s, then resume normal cadence
         panel.addEventListener('mouseleave', () => {
             document.body.classList.remove('hovering-panel');
             resumeTimeout = setTimeout(() => {
@@ -77,6 +122,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 startSlideshow();
             }, 1000);
         });
+    }
+
+    // ── Mobile touch: swipe left = go to project, swipe right = prev slide ──
+    const slideshowEl = document.querySelector('.slideshow-container');
+    if (slideshowEl) {
+        let touchX = 0, touchY = 0, touchT = 0;
+        slideshowEl.addEventListener('touchstart', e => {
+            touchX = e.touches[0].clientX;
+            touchY = e.touches[0].clientY;
+            touchT = Date.now();
+        }, { passive: true });
+        slideshowEl.addEventListener('touchend', e => {
+            const dx = touchX - e.changedTouches[0].clientX;
+            const dy = Math.abs(touchY - e.changedTouches[0].clientY);
+            const dt = Date.now() - touchT;
+            if (Math.abs(dx) < 40 || dy > Math.abs(dx)) return; // not a horizontal swipe
+            stopSlideshow();
+            if (dx > 0) {
+                // Swipe left → visit current project
+                const link = slides[currentIndex].dataset.link;
+                if (link) { window.location.href = link; return; }
+            } else {
+                // Swipe right → previous slide
+                prevSlide();
+            }
+            resumeTimeout = setTimeout(() => {
+                resumeTimeout = null;
+                startSlideshow();
+            }, 1000);
+        }, { passive: true });
     }
 
     if (panelBar) {
@@ -88,8 +163,15 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 isExpanded = false;
                 panel.classList.remove('expanded');
-                // Don't touch hovering-panel or slideshow here —
-                // cursor is still over the panel, so mouseleave will handle cleanup
+                // On mobile, mouseleave never fires after Collapse, so restart manually
+                if (window.matchMedia('(max-width: 499px)').matches) {
+                    document.body.classList.remove('hovering-panel');
+                    resumeTimeout = setTimeout(() => {
+                        resumeTimeout = null;
+                        nextSlide();
+                        startSlideshow();
+                    }, 2000);
+                }
             }
         });
     }

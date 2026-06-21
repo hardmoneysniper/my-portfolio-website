@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Works</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/eecs.css">
+    <link rel="icon" href="../images/icon.png">
+    <script src="../js/loader.js"></script>
+    <script src="../js/transitions.js"></script>
+</head>
+
+<body>
+    <header class="sidebar">
+        <a class="site-title" href="../index.html">Rongyu Shen</a>
+        <nav class="pageNav">
+            <ul>
+                <li><a class="hoverAnimation" href="../index.html">Home</a></li>
+                <li><a class="hoverAnimation" href="../projects.html">Projects</a></li>
+                <li><a class="hoverAnimation" href="../about.html">About Me</a></li>
+                <li><a class="hoverAnimation" href="https://drive.google.com/file/d/18148QExqdTG8SH_yBh63lANbMm12UwnP/view?usp=sharing">CV</a></li>
+                <li><a class="hoverAnimation" href="https://drive.google.com/file/d/1RuMzd0oeqMd5iTHmMuHWrvR4REzY45tw/view?usp=sharing">Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="spacer"></div>
+        <div class="image-box">
+            <video autoplay loop muted>
+                <source src="imgs/eecs/backdrop.mov" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="content">
+            <div class="spacer"></div>
+            <div class="section">
+                <div class="text">
+                    <p class="header">EECS Projects</p>
+                    <span class="info">
+                        <p><b>Courses: </b>EECS 183, EECS 280, EECS 281, EECS 492</p>
+                        <p><b>Professors: </b>William Arthur, James Juett, David Paoletti, Alexander Rodriguez</p>
+                        <p><b>Teammates: </b>Zeyu Shi, Arvind Emmanuel, Rundong Hu, Hanmin Xiang</p>
+                        <p><b>Languages: </b>C++17, Python 3, Arduino C++</p>
+                        <p><b>Tools: </b>NumPy, OpenAI Gymnasium, Adafruit RGBmatrixPanel</p>
+                    </span>
+                </div>
+                <div class="text-breaker"></div>
+                <div class="text">
+                    <p>On the first day of becoming a Michigan wolverine, I made up my mind to take a Computer Science minor due to the popularity of coding at that time. Through these 4 years of journey, I realized that what carried me through some relatively harder classes (like EECS 281) is actually the passion I built up along the way. Learning coding is similarly interesting as learning about cities. Specifically, functions are like infrastructure, debugging is like diagnosing urban dysfunctions, frameworks are like masterplanned developments, while fluency in both means the same. </p>
+                </div>
+            </div>
+
+            <div class="section">
+                <p class="header">Space Invaders | EECS 183</p>
+                <br>
+                <div class="text">
+                    <span class="info">
+                        <p><b>Course: </b>Elementary Programming Concepts</p>
+                        <p><b>Language: </b>Arduino C++</p>
+                        <p><b>Hardware: </b>Arduino Uno, 16×32 RGB LED Matrix, Potentiometer, Push Button</p>
+                        <p><b>Libraries: </b>Adafruit RGBmatrixPanel, Adafruit GFX</p>
+                    </span>
+                </div>
+                <div class="text-breaker"></div>
+                <div class="text">
+                    <p>This is the very beginning of the journey, everything was a breeze until the final project dropped. We naturally gravitated toward the fun option, which is building a Space Invador game from scratch using Arduino C++. We had a lot of fun testing the code, debugging all sorts of weird bugs, and of course, playing it.</p>
+                </div>
+                <br>
+                <div class="text" style="text-align: center;">
+                    <video autoplay loop muted style="max-width: 80%; margin-top: 0; display: block; margin-left: auto; margin-right: auto;">
+                        <source src="../works/imgs/eecs/Arduino%20demo.mov" type="video/mp4">
+                        <source src="../works/imgs/eecs/Arduino%20demo.mov" type="video/quicktime">
+                    </video>
+                </div>
+                <br><br><br>
+            </div>
+
+            <div class="section">
+                <p class="header">Euchre Simulator | EECS 280</p>
+                <br>
+                <div class="text">
+                    <span class="info">
+                        <p><b>Course: </b>Programming and Introductory Data Structures</p>
+                        <p><b>Language: </b>C++11</p>
+                        <p><b>Concepts: </b>Object Oriented Programming, Inheritance, Polymorphism, Abstract Classes, STL</p>
+                    </span>
+                </div>
+                <div class="text-breaker"></div>
+                <div class="text">
+                    <p>Euchre is one of these games that is way more fun than it has any right to be. You play it four people, two against two with your partner sitting across from you, and you use a tiny deck (24 cards) only the 9s on up to the Aces. Each round, one suit gets crowned "trump," which basically means those cards beat everything else. The strongest card is the Jack of trump (right bower), and the other Jack of the same color is the second strongest (left bower). Each hand is a quick race to win the most tricks, and the best part is playing off your partner by paying attention to each other and bluffing a little bit. This project turns this Midwestern classic to an equally enjoyable digital version in your palms. Disclaimer: Code is rewritten from C++ to JavaScript partially assisted by generative AI (Claude Opus 4.8) to better display it on the front end.</p>
+                </div>
+                <br>
+                <div class="text">
+                    <p class="subheader">How to Play</p>
+                    <p>You are <b>South</b>. Your partner is <b>North</b>. First team to <b>10 points</b> wins. For each hand, click <b>Order Up</b> to make the upcard's suit trump, or <b>Pass</b>. In round 2 you name a suit directly. During play, click a card and you <b>must follow the led suit</b> if you can. Win 3 or more tricks to score and win all 5 for a march (2 pts). Getting euchred (ordered up but losing the majority) costs your team 2 points to the opponents.</p>
+                </div>
+                <br>
+
+                <div id="euchre-wrap">
+                    <div id="euchre-status-bar">
+                        <div>You + Partner: <b><span id="eu-score-you">0</span></b></div>
+                        <div>Opponents: <b><span id="eu-score-opp">0</span></b></div>
+                        <div>Trump: <b><span id="eu-trump">—</span></b></div>
+                        <div>Tricks this hand: <b><span id="eu-tricks">— / —</span></b></div>
+                        <div>Dealer: <b><span id="eu-dealer">—</span></b></div>
+                    </div>
+
+                    <div id="eu-upcard-area" style="display:none;">
+                        Upcard: <span id="eu-upcard-card"></span>
+                    </div>
+
+                    <div id="euchre-table">
+                        <div class="eu-area-north">
+                            <div class="eu-player-label" id="eu-label-north">Partner (North)</div>
+                            <div class="eu-hand" id="eu-hand-north"></div>
+                        </div>
+                        <div class="eu-area-west">
+                            <div class="eu-player-label" id="eu-label-west">Opponent (West)</div>
+                            <div class="eu-hand" id="eu-hand-west"></div>
+                        </div>
+                        <div class="eu-area-trick" id="eu-trick">
+                            <div class="eu-trick-slot"><div class="eu-trick-label">North</div><div id="eu-t-north"></div></div>
+                            <div class="eu-trick-slot"><div class="eu-trick-label">West</div><div id="eu-t-west"></div></div>
+                            <div class="eu-trick-slot"><div class="eu-trick-label">East</div><div id="eu-t-east"></div></div>
+                            <div class="eu-trick-slot"><div class="eu-trick-label">South (You)</div><div id="eu-t-south"></div></div>
+                        </div>
+                        <div class="eu-area-east">
+                            <div class="eu-player-label" id="eu-label-east">Opponent (East)</div>
+                            <div class="eu-hand" id="eu-hand-east"></div>
+                        </div>
+                        <div class="eu-area-south">
+                            <div class="eu-hand" id="eu-hand-south"></div>
+                            <div class="eu-player-label">You (South)</div>
+                        </div>
+                    </div>
+
+                    <div id="eu-action">
+                        <button class="site-btn accent" onclick="euStartHand()">New Hand</button>
+                    </div>
+                    <div id="eu-log">Welcome to Euchre! Click <em>New Hand</em> to deal.</div>
+                </div>
+                <br><br><br>
+            </div>
+
+
+            <div class="section">
+                <p class="header">Traveling Pokémon Problem | EECS 281</p>
+                <br>
+                <div class="text">
+                    <span class="info">
+                        <p><b>Course: </b>Data Structures and Algorithms</p>
+                        <p><b>Language: </b>C++17</p>
+                        <p><b>Algorithms: </b>Prim's MST, Furthest-Insertion TSP, Branch-and-Bound Optimal TSP</p>
+                    </span>
+                </div>
+                <div class="text-breaker"></div>
+                <div class="text">
+                    <p>Despite being probably the hardest class in the sequence with runtime benchmarked projects and exams of handwritten LeetCode questions, this class gave me a breadth of knowledge in some fundamental data structures and algorithms. This project is an implementation of various algorithms toward solving the famous Traveling Salesman Problem. Disclaimer: Code is rewritten from C++ to JavaScript partially assisted by generative AI (Claude Opus 4.8) to better display it on the front end.</p>
+                </div>
+                <br>
+                <div class="text">
+                    <p class="subheader">Interactive Demo</p>
+                    <p><b>Click</b> anywhere on the canvas to place location points, then run an algorithm. Each button animates the path as it's built: <b>MST</b> grows the minimum spanning tree edge-by-edge via Prim's algorithm; <b>FastTSP</b> draws the furthest-insertion heuristic tour; <b>OptTSP</b> finds the exact shortest tour via branch-and-bound (limited to ≤ 12 points).</p>
+                </div>
+                <br>
+
+                <canvas id="pokemon-canvas" class="demo-canvas" width="700" height="420" onclick="pokemonClick(event)"></canvas>
+                <div id="pokemon-controls">
+                    <button class="site-btn" onclick="pokemonMST()">MST</button>
+                    <button class="site-btn" onclick="pokemonFastTSP()">FastTSP</button>
+                    <button class="site-btn" id="opt-btn" onclick="pokemonOptTSP()">OptTSP (≤12)</button>
+                    <button class="site-btn" onclick="pokemonClear()">Clear</button>
+                </div>
+                <div id="pokemon-legend">
+                    <span><span class="legend-dot" style="background:#3b82f6;"></span>MST</span>
+                    <span><span class="legend-dot" style="background:#f97316;"></span>FastTSP</span>
+                    <span><span class="legend-dot" style="background:#22c55e;"></span>OptTSP</span>
+                </div>
+                <p id="pokemon-stats" class="demo-stats">Click the canvas to place points, then run an algorithm.</p>
+                <br><br><br>
+            </div>
+
+
+            <div class="section">
+                <p class="header">MountainCar Reinforcement Learning | EECS 492</p>
+                <br>
+                <div class="text">
+                    <span class="info">
+                        <p><b>Course: </b>Introduction to Artificial Intelligence</p>
+                        <p><b>Language: </b>Python 3</p>
+                        <p><b>Libraries: </b>NumPy, OpenAI Gymnasium, Matplotlib</p>
+                        <p><b>Algorithms: </b>Q-Learning (model-free), Value Iteration (model-based)</p>
+                    </span>
+                </div>
+                <div class="text-breaker"></div>
+                <div class="text">
+                    <p>Touching upon the upper level basics of how AI works, this class is a lightweight and fun introduction to popular AI concepts and methodologies (I once took EECS 445 and quitted halfway because that was too much math for me), and a great way to wrap up my CS Minor journey. the MountainCar project is an introduction of using the OpenAI Gym to perform Q-learning and value iteration to learn about their effects and trade-offs. Due to front end restrictions of model usage, the following demo demonstrates Q-learning, which is model free, on training a small car to climb to the top of the mountain. Disclaimer: Code is rewritten from Python to JavaScript partially assisted by generative AI (Claude Opus 4.8) to better display it on the front end.</p>
+                </div>
+                <br>
+                <div class="text">
+                    <p class="subheader">Interactive Demo</p>
+                    <p>Click <b>Train</b> to run Q-learning for 5,000 episodes entirely in your browser. The agent starts knowing nothing and gradually discovers that it must reverse to build enough momentum. Adjust the learning rate and discount factor before training. Once training finishes, click <b>Watch Agent</b> to animate the learned policy.</p>
+                </div>
+                <br>
+
+                <canvas id="mc-canvas" class="demo-canvas" width="700" height="280"></canvas>
+                <div id="mc-controls">
+                    <button class="site-btn" id="mc-train-btn" onclick="mcTrain()">Train (5 000 eps)</button>
+                    <button class="site-btn" id="mc-watch-btn" onclick="mcWatch()" disabled>Watch Agent</button>
+                    <button class="site-btn" id="mc-reset-btn" onclick="mcReset()">Reset</button>
+                    <div class="slider-group">
+                        <label for="mc-lr">Learning Rate</label>
+                        <input type="range" id="mc-lr" min="0.1" max="1.0" step="0.05" value="0.9"
+                               oninput="document.getElementById('mc-lr-val').textContent=this.value">
+                        <span id="mc-lr-val">0.9</span>
+                    </div>
+                    <div class="slider-group">
+                        <label for="mc-gamma">γ</label>
+                        <input type="range" id="mc-gamma" min="0.90" max="0.99" step="0.01" value="0.95"
+                               oninput="document.getElementById('mc-gamma-val').textContent=this.value">
+                        <span id="mc-gamma-val">0.95</span>
+                    </div>
+                </div>
+                <p id="mc-stats" class="demo-stats">Click <em>Train</em> to begin.</p>
+                
+            </div>
+
+            
+            <div class="bottom-spacer"></div>
+        </div>
+    </main>
+
+    <script src="eecs-js/euchre.js"></script>
+    <script src="eecs-js/mountaincar.js"></script>
+    <script src="eecs-js/pokemon-viz.js"></script>
+</body>
+</html>

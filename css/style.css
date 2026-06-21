@@ -306,6 +306,7 @@ header ul a {
     border-color: #ffffff;
 }
 
+
 body.hovering-panel .slide.active {
     opacity: 1;
 }
@@ -923,121 +924,163 @@ iframe {
     }
 }
 
-/* Responsive Design for Phones */
-@media (max-width: 700px) {
-    :root {
-        --container-width: 95vw;
-    }
+/* ── Mobile hint animation for learn-more panel ── */
+@keyframes mobilePanelPop {
+    0%, 100% { transform: translateX(44px); }
+    25%, 65%  { transform: translateX(0); }
+}
 
-    .container {
-        padding-top: 160px;
-    }
+/* ── Mobile (≤ 499px) ─────────────────────────────────────────
+   Single breakpoint, mobile-first base for phones.
+   Desktop/tablet (> 500px) is unaffected.
+   ─────────────────────────────────────────────────────────── */
+@media (max-width: 499px) {
 
-    /* Header and Navigation */
+    /* ── Header ─────────────────────────────────── */
     header {
         padding: 10px 16px;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+        align-items: center;
+        gap: 6px;
     }
+    .site-title { text-align: center; width: 100%; }
+    header nav { width: 100%; display: flex; justify-content: center; }
+    header ul  { flex-wrap: wrap; gap: 6px 14px; justify-content: center; }
+    header ul a { font-size: 13px; letter-spacing: 0.03em; }
 
-    header nav {
+    /* ── Image-box: inline element on mobile (not fixed backdrop) ── */
+    .image-box {
+        position: relative !important;
+        height: auto !important;
         width: 100%;
-        justify-content: flex-start;
+        display: block;
+    }
+    /* First spacer in <main> provides header clearance */
+    main > .spacer { height: 80px; }
+    /*
+     * Fit-by-width logic:
+     *   ratio ≤ 2:1 → height: auto gives natural height > 200px → min-height ignored
+     *   ratio > 2:1 → height: auto gives < 200px → min-height kicks in, object-fit: cover clips L/R
+     */
+    .image-box img {
+        width: 100% !important;
+        max-width: none !important;
+        height: auto;
+        min-height: 200px;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        margin: 0 !important;
+    }
+    /* Disable slide-in animation so content follows image-box directly */
+    .content {
+        transform: none !important;
+        transition: none !important;
     }
 
-    header ul {
-        flex-wrap: wrap;
-        gap: 10px 16px;
-    }
-
-    header ul a {
-        font-size: 15px;
-    }
-
-    header p {
-        font-size: var(--fs-label);
-    }
-
-    /* Slideshow Adjustments */
+    /* ── Slideshow ──────────────────────────────── */
     .slideshow-container {
         top: 80px;
         height: calc(100vh - 80px);
     }
 
+    /* Ensure JS-created slide videos fill the slide on mobile */
+    .slideshow-container video {
+        max-width: none !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* ── Learn-more panel: pop-out hint on mobile ─ */
     .learn-more-panel {
         top: 80px;
         height: calc(100vh - 80px);
-        width: 50px;
+        transform: translateX(44px);
+        transition: width 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+                    background-color 0.25s ease,
+                    transform 0.4s ease;
     }
-
-    /* Text Container Adjustments */
-    .text-container {
-        flex-direction: column;
-        gap: 20px;
+    /* .panel-hint class is toggled by JS on each slide change */
+    .learn-more-panel.panel-hint:not(.expanded) {
+        animation: mobilePanelPop 2s ease-in-out 0.4s 1 forwards;
     }
+    .learn-more-panel.expanded {
+        animation: none !important;
+        transform: translateX(0) !important;
+        width: 100vw;
+    }
+    .learn-more-content { left: 20px; }
 
-    .each-section {
+    /* ── Container (non-homepage pages) ────────── */
+    .container { padding: 100px 16px 24px; }
+
+    /* ── Sections (works pages) ─────────────────── */
+    .section { padding: 10px 16px; }
+
+    /* ── About / text layout ────────────────────── */
+    .text-container { flex-direction: column; gap: 20px; }
+    .each-section   { padding: 0; }
+    .section-title  { font-size: 18px; text-align: left; }
+    .message        { flex-direction: column; }
+    .message p      { font-size: var(--fs-body); }
+
+    /* ── Skills ──────────────────────────────────── */
+    .skills-categories { flex-direction: column; gap: 20px 10px; }
+    .category          { flex: 1 1 100%; }
+    .category-title    { font-size: var(--fs-label); }
+    .skills-list       { font-size: var(--fs-label); }
+    .skill-tag         { font-size: 15px; }
+
+    /* ── Project gallery ─────────────────────────── */
+    .project-gallery { grid-template-columns: 1fr; gap: 12px; }
+    .project-img     { border-radius: 6px; }
+    /* No hover on touch screens */
+    .project-img:hover img              { transform: none; }
+    .project-img:hover .project-text    { opacity: 0; transform: scale(1); }
+    .project-img:hover                  { transform: none; box-shadow: none; }
+
+    /* ── Images & video — 80vw in content areas ──── */
+    .text img,
+    .image-reg img,
+    .image-med img,
+    .image-small img {
+        max-width: 80vw !important;
+        width: auto;
+        height: auto;
         padding: 0;
+        margin: 8px auto;
+        display: block;
     }
+    .text video,
+    video {
+        max-width: 80vw !important;
+        margin: 8px auto !important;
+        display: block;
+    }
+    .project-img video {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+    }
+    .pic-grid { gap: 16px; justify-content: center; }
+    .pic-grid .image-grid { max-width: 80vw; min-width: 0; }
+    .image-grid img { width: 100%; }
 
-    .section-title {
-        font-size: 18px;
-        text-align: center;
-    }
+    /* ── Quote ───────────────────────────────────── */
+    .quote { width: 92%; margin: 0 4px; }
 
-    .message p {
-        font-size: var(--fs-body);
-    }
+    /* ── View window (scrollable image strips) ───── */
+    .view-window { height: 220px; }
 
-    /* Skills Section */
-    .skills-categories {
-        flex-direction: column;
-    }
+    /* ── Swiper ──────────────────────────────────── */
+    .swiper { height: 360px; }
 
-    .category-title {
-        font-size: var(--fs-label);
-    }
+    /* ── Spacers ─────────────────────────────────── */
+    .spacer       { height: 16px; }
+    .bottom-spacer{ padding-top: 40px; }
 
-    .skills-list {
-        font-size: var(--fs-label);
-    }
-
-    /* Project Gallery */
-    .project-gallery {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .project-img {
-        border-radius: 6px;
-    }
-
-    /* Footer and Miscellaneous */
-    .spacer {
-        height: 30px;
-    }
-
-    .link.hoverAnimation {
-        font-size: var(--fs-label);
-    }
-}
-
-/* Additional breakpoint for very small screens */
-@media (max-width: 480px) {
-    .header {
-        font-size: 20px;
-    }
-
-    .section-title {
-        font-size: 17px;
-    }
-
-    .message p {
-        font-size: var(--fs-label);
-    }
-
-    .skills-list {
-        font-size: var(--fs-label);
-    }
+    /* ── Section text-breaker ────────────────────── */
+    .text-breaker { margin: 16px auto; }
 }

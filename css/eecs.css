@@ -91,7 +91,9 @@
     background: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
     padding: 5px;
     font-size: 13px;
     font-weight: 600;
@@ -102,6 +104,11 @@
     user-select: none;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+.card-rank {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+}
 .eu-card.red   { color: #bb2649; }
 .eu-card.black { color: #0e0e0e; }
 .eu-card.playable { cursor: pointer; border-color: #0e0e0e; }
@@ -110,7 +117,6 @@
     box-shadow: 0 8px 18px rgba(0,0,0,0.18);
 }
 .eu-card .suit-big { font-size: 22px; line-height: 1; text-align: center; }
-.eu-card .rank-bot { transform: rotate(180deg); }
 
 /* Card back */
 .eu-back {
@@ -200,8 +206,10 @@
         height: 62px;
         font-size: 10px;
         padding: 3px;
+        gap: 1px;
     }
     .eu-card .suit-big { font-size: 14px; }
+    .card-rank { font-size: 10px; }
     .eu-back { width: 38px; height: 62px; }
     .eu-area-south { gap: 10px; }
     #eu-action { margin-top: 20px; }

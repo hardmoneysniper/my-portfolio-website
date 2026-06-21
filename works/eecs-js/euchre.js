@@ -180,9 +180,8 @@
             ? `onclick="euPlayCard(${idx})" `
             : '';
         return `<div class="${cls}" ${onclick}>
-            <span>${SHORT[card.rank]}<br>${SYM[card.suit]}</span>
+            <span class="card-rank">${SHORT[card.rank]}</span>
             <span class="suit-big">${SYM[card.suit]}</span>
-            <span class="rank-bot">${SHORT[card.rank]}<br>${SYM[card.suit]}</span>
         </div>`;
     }
 

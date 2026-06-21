@@ -51,7 +51,7 @@
             </div>
 
             <div>
-                <video autoplay loop style="margin: 20px; place-self: center;">
+                <video autoplay loop muted playsinline style="margin: 20px; place-self: center;">
                     <source src="../works/imgs/NYC Taxi/datavizdemo.mp4" type="video/mp4">
                 </video>
             </div>
@@ -222,15 +222,16 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        loop: true, // Infinite looping
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: true,
+            autoHeight: true,
         });
     </script>
 </body>

@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 vid = document.createElement('video');
                 vid.loop = true;
                 vid.muted = true;
+                vid.setAttribute('playsinline', '');
                 // Override global video rule (max-width:80%; margin:100px auto 0)
                 vid.style.cssText = [
                     'position:absolute', 'top:0', 'left:0',
@@ -39,8 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 ].join(';');
                 const src = document.createElement('source');
                 src.src = slide.dataset.video;
-                src.type = 'video/mp4';
+                src.type = 'video/quicktime';
+                const src2 = document.createElement('source');
+                src2.src = slide.dataset.video;
+                src2.type = 'video/mp4';
                 vid.appendChild(src);
+                vid.appendChild(src2);
                 slide.appendChild(vid);
             }
             vid.play();

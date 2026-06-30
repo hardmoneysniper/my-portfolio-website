@@ -121,27 +121,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         panel.addEventListener('mouseleave', () => {
             document.body.classList.remove('hovering-panel');
-            resumeTimeout = setTimeout(() => {
-                resumeTimeout = null;
-                nextSlide();
-                startSlideshow();
-            }, 1000);
+            if (!isExpanded && !resumeTimeout) {
+                resumeTimeout = setTimeout(() => {
+                    resumeTimeout = null;
+                    startSlideshow();
+                }, 1000);
+            }
         });
     }
 
     // ── Mobile touch: swipe left = go to project, swipe right = prev slide ──
     const slideshowEl = document.querySelector('.slideshow-container');
     if (slideshowEl) {
-        let touchX = 0, touchY = 0, touchT = 0;
+        let touchX = 0, touchY = 0;
         slideshowEl.addEventListener('touchstart', e => {
             touchX = e.touches[0].clientX;
             touchY = e.touches[0].clientY;
-            touchT = Date.now();
         }, { passive: true });
         slideshowEl.addEventListener('touchend', e => {
             const dx = touchX - e.changedTouches[0].clientX;
             const dy = Math.abs(touchY - e.changedTouches[0].clientY);
-            const dt = Date.now() - touchT;
             if (Math.abs(dx) < 40 || dy > Math.abs(dx)) return; // not a horizontal swipe
             stopSlideshow();
             if (dx > 0) {
@@ -152,10 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Swipe right → previous slide
                 prevSlide();
             }
-            resumeTimeout = setTimeout(() => {
-                resumeTimeout = null;
-                startSlideshow();
-            }, 1000);
+            if (!isExpanded) {
+                resumeTimeout = setTimeout(() => {
+                    resumeTimeout = null;
+                    startSlideshow();
+                }, 1000);
+            }
         }, { passive: true });
     }
 
@@ -165,18 +166,17 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isExpanded) {
                 isExpanded = true;
                 panel.classList.add('expanded');
+                stopSlideshow();
             } else {
                 isExpanded = false;
                 panel.classList.remove('expanded');
-                // On mobile, mouseleave never fires after Collapse, so restart manually
-                if (window.matchMedia('(max-width: 499px)').matches) {
-                    document.body.classList.remove('hovering-panel');
-                    resumeTimeout = setTimeout(() => {
-                        resumeTimeout = null;
-                        nextSlide();
-                        startSlideshow();
-                    }, 2000);
-                }
+                document.body.classList.remove('hovering-panel');
+                stopSlideshow();
+                resumeTimeout = setTimeout(() => {
+                    resumeTimeout = null;
+                    nextSlide();
+                    startSlideshow();
+                }, 1500);
             }
         });
     }

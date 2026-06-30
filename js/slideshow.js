@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     resumeTimeout = null;
                     nextSlide();
                     startSlideshow();
-                }, 1500);
+                }, 2000);
             }
         });
     }

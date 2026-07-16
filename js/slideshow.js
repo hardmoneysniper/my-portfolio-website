@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let slideInterval = null;
     let resumeTimeout = null;
     let isExpanded = false;
+    let isHovering = false;
     const intervalTime = 3000;
 
     function showSlide(index) {
@@ -40,15 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 ].join(';');
                 const src = document.createElement('source');
                 src.src = slide.dataset.video;
-                src.type = 'video/quicktime';
-                const src2 = document.createElement('source');
-                src2.src = slide.dataset.video;
-                src2.type = 'video/mp4';
+                src.type = 'video/mp4';
                 vid.appendChild(src);
-                vid.appendChild(src2);
                 slide.appendChild(vid);
             }
-            vid.play();
+            vid.play().catch(() => {});
         }
 
         if (!slide.style.backgroundImage && slide.dataset.bg) {
@@ -115,11 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (panel) {
         panel.addEventListener('mouseenter', () => {
+            isHovering = true;
             document.body.classList.add('hovering-panel');
             stopSlideshow();
         });
 
         panel.addEventListener('mouseleave', () => {
+            isHovering = false;
             document.body.classList.remove('hovering-panel');
             if (!isExpanded && !resumeTimeout) {
                 resumeTimeout = setTimeout(() => {
@@ -170,13 +169,15 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 isExpanded = false;
                 panel.classList.remove('expanded');
-                document.body.classList.remove('hovering-panel');
                 stopSlideshow();
-                resumeTimeout = setTimeout(() => {
-                    resumeTimeout = null;
-                    nextSlide();
-                    startSlideshow();
-                }, 2000);
+                if (!isHovering) {
+                    document.body.classList.remove('hovering-panel');
+                    resumeTimeout = setTimeout(() => {
+                        resumeTimeout = null;
+                        nextSlide();
+                        startSlideshow();
+                    }, 2000);
+                }
             }
         });
     }

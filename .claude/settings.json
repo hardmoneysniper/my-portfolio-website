@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(awk '{print $9, \"-\", $5}')"
+      "Bash(awk '{print $9, \"-\", $5}')",
+      "Bash(claude update *)",
+      "PowerShell(claude update)",
+      "PowerShell(npm update -g @anthropic-ai/claude-code 2>&1; $v = \\(npm list -g @anthropic-ai/claude-code --depth=0 2>$null | Select-String '\\\\d+\\\\.\\\\d+\\\\.\\\\d+'\\); \"Installed: $v\")",
+      "PowerShell(npm list -g @anthropic-ai/claude-code --depth=0)"
     ]
   }
 }

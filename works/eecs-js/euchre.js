@@ -169,7 +169,7 @@
 
     function log(msg) {
         const el = $('eu-log');
-        el.innerHTML += msg + '<br>';
+        el.insertAdjacentHTML('beforeend', msg + '<br>');
         el.scrollTop  = el.scrollHeight;
     }
 
@@ -227,28 +227,20 @@
         $('eu-action').innerHTML = html;
     }
 
-    function showOrderUp(isYou, upcard) {
+    function showOrderUp(upcard) {
         const upcardHTML = cardHTML(upcard);
         $('eu-upcard-area').style.display = 'flex';
         $('eu-upcard-area').innerHTML     =
             `<span style="font-size:var(--fs-label);text-transform:uppercase;letter-spacing:.04em">Upcard:</span> ${upcardHTML}`;
 
-        if (!isYou) {
-            setAction(`<span style="font-size:var(--fs-label);color:rgba(14,14,14,.5)">Waiting for ${NAMES[G.pendingType === 'trump1_ai' ? -1 : 0]}…</span>`);
-            return;
-        }
         setAction(`
             <button class="site-btn accent" onclick="euOrderUp()">Order Up (${upcard.suit} ${SYM[upcard.suit]})</button>
             <button class="site-btn" onclick="euPass()">Pass</button>
         `);
     }
 
-    function showPickSuit(isYou, blocked) {
+    function showPickSuit(blocked) {
         $('eu-upcard-area').style.display = 'none';
-        if (!isYou) {
-            setAction(`<span style="font-size:var(--fs-label);color:rgba(14,14,14,.5)">Waiting for opponents to pick suit…</span>`);
-            return;
-        }
         const btns = SUITS
             .filter(s => s !== blocked)
             .map(s => `<button class="site-btn accent" onclick="euPickSuit('${s}')">${s} ${SYM[s]}</button>`)
@@ -299,7 +291,7 @@
 
             if (p === 0) {
                 G.pendingType = 'trump1';
-                showOrderUp(true, G.upcard);
+                showOrderUp(G.upcard);
                 const choice = await waitFor('trump1');
                 if (choice === 'order') {
                     log(`You ordered up ${G.upcard.suit}.`);
@@ -329,7 +321,7 @@
                 const isDealer = p === G.dealer;
 
                 if (p === 0) {
-                    showPickSuit(true, G.upSuit);
+                    showPickSuit(G.upSuit);
                     const choice = await waitFor('trump2');
                     if (choice !== 'pass') {
                         log(`You name ${choice} as trump.`);

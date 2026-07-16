@@ -12,8 +12,8 @@
     const W = 700, H = 420;
     const PAD = 30;
 
-    let points     = [];
-    let animCancel = false;
+    let points    = [];
+    let animToken = 0;
 
     const C = { mst: '#3b82f6', fast: '#f97316', opt: '#22c55e', pt: '#0e0e0e' };
 
@@ -81,9 +81,9 @@
 
     const delay = ms => new Promise(r => setTimeout(r, ms));
 
-    async function animateEdges(edges, color) {
+    async function animateEdges(edges, color, token) {
         for (let i = 0; i < edges.length; i++) {
-            if (animCancel) return;
+            if (token !== animToken) return;
             drawGrid();
             for (let j = 0; j <= i; j++) {
                 const e = edges[j];
@@ -95,10 +95,10 @@
         }
     }
 
-    async function animateTour(tour, color) {
+    async function animateTour(tour, color, token) {
         const n = tour.length;
         for (let i = 0; i < n; i++) {
-            if (animCancel) return;
+            if (token !== animToken) return;
             drawGrid();
             for (let j = 0; j <= i; j++) {
                 const a = points[tour[j]], b = points[tour[(j + 1) % n]];
@@ -239,7 +239,7 @@
     }
 
     window.pokemonClick = function (e) {
-        animCancel = true;
+        animToken++;
         const rect = canvas.getBoundingClientRect();
         const scaleX = W / rect.width, scaleY = H / rect.height;
         points.push({
@@ -252,41 +252,35 @@
     };
 
     window.pokemonMST = async function () {
-        animCancel = true;
-        await delay(10);
-        animCancel = false;
+        const token = ++animToken;
         if (points.length < 2) { stats.textContent = 'Place at least 2 points.'; return; }
         const { cost, edges } = primMST(points);
         stats.textContent = 'Building MST…';
-        await animateEdges(edges, C.mst);
-        if (!animCancel) stats.textContent = `MST cost: ${cost.toFixed(1)} px`;
+        await animateEdges(edges, C.mst, token);
+        if (token === animToken) stats.textContent = `MST cost: ${cost.toFixed(1)} px`;
     };
 
     window.pokemonFastTSP = async function () {
-        animCancel = true;
-        await delay(10);
-        animCancel = false;
+        const token = ++animToken;
         if (points.length < 3) { stats.textContent = 'Place at least 3 points.'; return; }
         const { cost, tour } = fastTSP(points);
         stats.textContent = 'Drawing FastTSP tour…';
-        await animateTour(tour, C.fast);
-        if (!animCancel) stats.textContent = `FastTSP tour length: ${cost.toFixed(1)} px`;
+        await animateTour(tour, C.fast, token);
+        if (token === animToken) stats.textContent = `FastTSP tour length: ${cost.toFixed(1)} px`;
     };
 
     window.pokemonOptTSP = async function () {
-        animCancel = true;
-        await delay(10);
-        animCancel = false;
+        const token = ++animToken;
         if (points.length < 3) { stats.textContent = 'Place at least 3 points.'; return; }
         if (points.length > 12) { stats.textContent = 'OptTSP requires ≤ 12 points.'; return; }
         stats.textContent = 'Computing optimal tour…';
         const { cost, tour } = optTSP(points);
-        await animateTour(tour, C.opt);
-        if (!animCancel) stats.textContent = `OptTSP tour length: ${cost.toFixed(1)} px (exact)`;
+        await animateTour(tour, C.opt, token);
+        if (token === animToken) stats.textContent = `OptTSP tour length: ${cost.toFixed(1)} px (exact)`;
     };
 
     window.pokemonClear = function () {
-        animCancel = true;
+        animToken++;
         points = [];
         drawGrid();
         stats.textContent = 'Canvas cleared. Click to place points.';

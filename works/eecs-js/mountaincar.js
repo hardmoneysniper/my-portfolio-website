@@ -61,6 +61,8 @@
     }
 
     function mcTrain() {
+        if (watchFrame) cancelAnimationFrame(watchFrame);
+        watching = false;
         if (!Q) initQ();
         const EPISODES = 5000;
         const lr   = parseFloat(document.getElementById('mc-lr').value);

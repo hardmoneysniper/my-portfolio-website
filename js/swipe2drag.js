@@ -1,6 +1,8 @@
 const viewWindow = document.querySelector('.view-window');
 let isDragging = false;
 let startX, scrollLeft;
+let pendingX = null;
+let rafId = null;
 
 viewWindow.addEventListener('mousedown', (e) => {
     isDragging = true;
@@ -22,7 +24,12 @@ viewWindow.addEventListener('mouseup', () => {
 viewWindow.addEventListener('mousemove', (e) => {
     if (!isDragging) return; // Exit if not dragging
     e.preventDefault();
-    const x = e.pageX - viewWindow.offsetLeft; // Current X position
-    const distance = x - startX; // Distance moved by the mouse
-    viewWindow.scrollLeft = scrollLeft - distance; // Update scroll position
+    pendingX = e.pageX;
+    if (rafId !== null) return;
+    rafId = requestAnimationFrame(() => {
+        rafId = null;
+        const x = pendingX - viewWindow.offsetLeft; // Current X position
+        const distance = x - startX; // Distance moved by the mouse
+        viewWindow.scrollLeft = scrollLeft - distance; // Update scroll position
+    });
 });

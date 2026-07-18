@@ -87,10 +87,36 @@
             setTimeout(() => loader.remove(), 150);
         };
 
-        window.addEventListener('load', () => {
+        // Pages with a slideshow (homepage) must also wait for the first
+        // slide's image/video to actually be ready — window 'load' alone can
+        // fire before a slide's fresh (non-preloaded) background finishes.
+        const needsContentReady = !!document.querySelector('.slideshow-container');
+        let loadFired = false;
+        let contentFired = !needsContentReady;
+
+        function maybeDismiss() {
+            if (!loadFired || !contentFired) return;
             const elapsed = Date.now() - startTime;
             setTimeout(dismiss, Math.max(MIN - elapsed, 0));
+        }
+
+        window.addEventListener('load', () => {
+            loadFired = true;
+            maybeDismiss();
         });
+
+        if (needsContentReady) {
+            window.addEventListener('content-ready', () => {
+                contentFired = true;
+                maybeDismiss();
+            }, { once: true });
+
+            // Never block dismissal forever if content-ready never fires
+            setTimeout(() => {
+                contentFired = true;
+                maybeDismiss();
+            }, 4000);
+        }
     }
 
     if (document.readyState === 'loading') {

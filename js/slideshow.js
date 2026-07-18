@@ -91,7 +91,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Tell loader.js when the first slide's actual visual (image/video) is
+    // ready, so the loading animation doesn't dismiss before it can be seen.
+    function signalContentReady(slide) {
+        const fire = () => window.dispatchEvent(new Event('content-ready'));
+        const video = slide.querySelector('video');
+        if (video) {
+            if (video.readyState >= 2) { fire(); return; }
+            video.addEventListener('loadeddata', fire, { once: true });
+            video.addEventListener('error', fire, { once: true });
+            return;
+        }
+        const bgMatch = slide.style.backgroundImage.match(/url\(["']?([^"')]+)["']?\)/);
+        const bgUrl = slide.dataset.bg || (bgMatch && bgMatch[1]);
+        if (bgUrl) {
+            const probe = new Image();
+            probe.onload = fire;
+            probe.onerror = fire;
+            probe.src = bgUrl;
+            return;
+        }
+        fire();
+    }
+
     showSlide(0);
+    signalContentReady(slides[0]);
 
     // Start rotation only after the loader overlay is fully removed from the DOM
     function startAfterLoader() {

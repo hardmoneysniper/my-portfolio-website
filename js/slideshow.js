@@ -14,6 +14,48 @@ document.addEventListener('DOMContentLoaded', () => {
     let isHovering = false;
     const intervalTime = 3000;
 
+    // Lazy-create (but don't play) the slide's video, so it can be called
+    // ahead of time to let the video start buffering before its slide is shown.
+    function ensureVideo(slide) {
+        if (!slide.dataset.video) return null;
+        let vid = slide.querySelector('video');
+        if (!vid) {
+            vid = document.createElement('video');
+            vid.loop = true;
+            vid.muted = true;
+            vid.setAttribute('playsinline', '');
+            // Override global video rule (max-width:80%; margin:100px auto 0)
+            vid.style.cssText = [
+                'position:absolute', 'top:0', 'left:0',
+                'width:100%', 'height:100%',
+                'max-width:none', 'margin:0',
+                'object-fit:cover'
+            ].join(';');
+            const src1 = document.createElement('source');
+            src1.src = slide.dataset.video;
+            src1.type = 'video/quicktime';
+            const src2 = document.createElement('source');
+            src2.src = slide.dataset.video;
+            src2.type = 'video/mp4';
+            vid.appendChild(src1);
+            vid.appendChild(src2);
+            slide.appendChild(vid);
+        }
+        return vid;
+    }
+
+    // Kick off loading of a slide's asset ahead of its turn in the rotation,
+    // so there's no blank gap while it decodes when it actually becomes active.
+    function preloadSlide(slide) {
+        if (slide.dataset.video) {
+            ensureVideo(slide);
+            return;
+        }
+        if (!slide.style.backgroundImage && slide.dataset.bg) {
+            slide.style.backgroundImage = `url('${slide.dataset.bg}')`;
+        }
+    }
+
     function showSlide(index) {
         // Pause any video in slides becoming inactive
         slides.forEach(s => {
@@ -23,30 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const slide = slides[index];
-
-        // lazy create on first visit
-        if (slide.dataset.video) {
-            let vid = slide.querySelector('video');
-            if (!vid) {
-                vid = document.createElement('video');
-                vid.loop = true;
-                vid.muted = true;
-                vid.setAttribute('playsinline', '');
-                // Override global video rule (max-width:80%; margin:100px auto 0)
-                vid.style.cssText = [
-                    'position:absolute', 'top:0', 'left:0',
-                    'width:100%', 'height:100%',
-                    'max-width:none', 'margin:0',
-                    'object-fit:cover'
-                ].join(';');
-                const src = document.createElement('source');
-                src.src = slide.dataset.video;
-                src.type = 'video/mp4';
-                vid.appendChild(src);
-                slide.appendChild(vid);
-            }
-            vid.play().catch(() => {});
-        }
+        const vid = ensureVideo(slide);
+        if (vid) vid.play().catch(() => {});
 
         if (!slide.style.backgroundImage && slide.dataset.bg) {
             slide.style.backgroundImage = `url('${slide.dataset.bg}')`;
@@ -64,6 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
             void panel.offsetWidth; // force reflow to restart animation
             panel.classList.add('panel-hint');
         }
+
+        // Get a head start on the next slide's asset so its transition-in is instant
+        preloadSlide(slides[(index + 1) % slides.length]);
     }
 
     function nextSlide() {

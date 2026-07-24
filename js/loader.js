@@ -25,7 +25,7 @@
         } catch (_) {}
         return Math.random() * 400 + 800;           // 800–1200 ms
     }
-    const MIN = getMin();
+    let MIN = getMin();
 
     const IMAGES = [
         { n: 1, type: 'portrait'  },
@@ -91,6 +91,7 @@
         // slide's image/video to actually be ready — window 'load' alone can
         // fire before a slide's fresh (non-preloaded) background finishes.
         const needsContentReady = !!document.querySelector('.slideshow-container');
+        if (needsContentReady) MIN = 1250; // homepage: give the slideshow room to settle
         let loadFired = false;
         let contentFired = !needsContentReady;
 

@@ -157,7 +157,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     startAfterLoader();
 
-    if (panel) {
+    // isHovering only means anything on devices with a real mouse/trackpad.
+    // On touchscreens some mobile browsers fire a synthetic 'mouseenter' on
+    // the first tap of an element but never a matching 'mouseleave' (there's
+    // no cursor to leave), which stuck isHovering at true forever and made
+    // the collapse handler below permanently skip its resume logic. Only
+    // attach these listeners on devices that support genuine hover.
+    const hasRealHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (panel && hasRealHover) {
         panel.addEventListener('mouseenter', () => {
             isHovering = true;
             document.body.classList.add('hovering-panel');

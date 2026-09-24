@@ -157,14 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     startAfterLoader();
 
-    // isHovering only means anything on devices with a real mouse/trackpad.
-    // On touchscreens some mobile browsers fire a synthetic 'mouseenter' on
-    // the first tap of an element but never a matching 'mouseleave' (there's
-    // no cursor to leave), which stuck isHovering at true forever and made
-    // the collapse handler below permanently skip its resume logic. Only
-    // attach these listeners on devices that support genuine hover.
-    const hasRealHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-    if (panel && hasRealHover) {
+    if (panel) {
         panel.addEventListener('mouseenter', () => {
             isHovering = true;
             document.body.classList.add('hovering-panel');
@@ -224,7 +217,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 isExpanded = false;
                 panel.classList.remove('expanded');
                 stopSlideshow();
-                if (!isHovering) {
+                // On mobile there's no real cursor, so mouseleave never fires after
+                // tapping Collapse — a synthetic mouseenter on first tap leaves
+                // isHovering stuck true forever. Force the resume on mobile regardless.
+                const isMobile = window.matchMedia('(max-width: 499px)').matches;
+                if (!isHovering || isMobile) {
                     document.body.classList.remove('hovering-panel');
                     resumeTimeout = setTimeout(() => {
                         resumeTimeout = null;

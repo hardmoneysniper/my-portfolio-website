@@ -721,6 +721,23 @@ video {
     cursor: grabbing;
 }
 
+/* Embedded demo — always the width of the surrounding text column, on
+   every screen size, with a fixed aspect ratio so it never needs a
+   separate mobile override. On mobile the embed's fixed-width internal
+   layout doesn't fit well, so the demo video is shown there instead
+   (see the mobile media query below). */
+.demo-embed {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1242 / 720;
+    margin: 40px auto 0;
+    border: 1px solid #ddd;
+}
+
+.demo-embed-video {
+    display: none;
+}
+
 .swiper {
     width: 100%;
     max-width: 1000px;
@@ -1096,6 +1113,10 @@ iframe {
 
     /* ── Quote ───────────────────────────────────── */
     .quote { width: 92%; margin: 0 4px; }
+
+    /* ── Demo embed: show the video instead, fixed layout doesn't fit ── */
+    .demo-embed { display: none; }
+    .demo-embed-video { display: block; }
 
     /* ── View window (scrollable image strips) ───── */
     .view-window { height: 220px; }
